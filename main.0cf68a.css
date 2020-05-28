@@ -304,6 +304,11 @@ body {
   color: #333;
   background-color: #fff;
   min-height: 100%;
+  /* background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("http:localhost:4000/img/mainback.jpg") no-repeat 0% 0% / cover; */
 }
 article,
 aside,
@@ -758,7 +763,7 @@ html {
   background: hsla(0, 0%, 100%, 0.3);
 }
 .left-col {
-  background: #fff;
+  /* background-color: "linear-gradient(200deg,#a0cfe4,#e8c37e)"; */
   width: 300px;
   position: fixed;
   opacity: 1;
@@ -767,6 +772,7 @@ html {
   z-index: 999;
 }
 .left-col .overlay {
+  /* background-color: "linear-gradient(200deg,#a0cfe4,#e8c37e)"; */
   width: 100%;
   height: 180px;
   position: absolute;
@@ -783,14 +789,14 @@ html {
   border-bottom: 1px solid color-border;
 }
 .left-col #header a {
-  color: #696969;
+  color: #1da7dd;
 }
 .left-col #header a:hover {
-  color: #b0a0aa;
+  color: #086ef6;
 }
 .left-col #header .header-subtitle {
   text-align: center;
-  color: #999;
+  color: #1da7dd;
   font-size: 14px;
   line-height: 25px;
   overflow: hidden;
@@ -800,6 +806,7 @@ html {
   -webkit-box-orient: vertical;
 }
 .left-col #header .header-menu {
+  color: #4f96b3;
   font-weight: 300;
   line-height: 31px;
   text-transform: uppercase;
@@ -862,6 +869,7 @@ html {
   font-family: Roboto, serif;
   font-size: 30px;
   transition: 0.3s;
+  color: #086ef6;
 }
 ::-webkit-scrollbar {
   width: 10px;
@@ -2936,6 +2944,7 @@ pre .id {
     color: #424242;
   }
   #mobile-nav .overlay {
+    background-color: "linear-gradient(200deg,#a0cfe4,#e8c37e)";
     height: 110px;
     position: absolute;
     width: 100%;
