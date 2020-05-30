@@ -806,6 +806,7 @@ html {
   -webkit-box-orient: vertical;
 }
 .left-col #header .header-menu {
+  font-family: unset;
   color: #4f96b3;
   font-weight: 300;
   line-height: 31px;
@@ -866,7 +867,7 @@ html {
 .left-col #header .header-author {
   text-align: center;
   margin: 0.67em 0;
-  font-family: Roboto, serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 30px;
   transition: 0.3s;
   color: #086ef6;
