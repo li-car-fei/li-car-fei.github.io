@@ -418,20 +418,21 @@ destroyed钩子函数在Vue 实例销毁后调用。调用后，Vue 实例指示
 
 
 
-<div id="gitment-ctn"></div> 
+<div id="gitment-ctn"></div>
 <link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
-var gitment = new Gitment({
-  id: "http://yoursite.com/2020/03/28/Vue-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E8%A7%A3%E6%9E%90/",
-  owner: 'li-car-fei',
-  repo: 'li-car-fei.github.io',
-  oauth: {
-    client_id: 'c455113c0bdc87f92fd0',
-    client_secret: 'a88bd5b381138f689b6157e17e03aad11d4cd4e1',
-  },
-})
-gitment.render('gitment-ctn')
+  var gitment = new Gitment({
+    //id: "http://yoursite.com/2020/03/28/Vue-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E8%A7%A3%E6%9E%90/",
+    id: 'Sat Mar 28 2020 17:13:11 GMT+0800',
+    owner: 'li-car-fei',
+    repo: 'li-car-fei.github.io',
+    oauth: {
+      client_id: 'c455113c0bdc87f92fd0',
+      client_secret: 'a88bd5b381138f689b6157e17e03aad11d4cd4e1',
+    },
+  })
+  gitment.render('gitment-ctn')
 </script>
 
 
