@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/05/31/Django-Restful-Framework-%E8%A7%86%E5%9B%BE/</loc>
+    
+    <lastmod>2020-05-31T06:03:41.853Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/01/31/Vue-%E5%B8%B8%E7%94%A8%E5%BC%80%E5%8F%91%E6%8A%80%E5%B7%A7%E4%BC%98%E5%8C%96/</loc>
+    
+    <lastmod>2020-05-31T04:59:23.689Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/photos/data.json</loc>
     
     <lastmod>2020-05-30T15:20:25.920Z</lastmod>
