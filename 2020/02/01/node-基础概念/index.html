@@ -6,14 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020/2 | 藤原拓鞋</title>
+  <title>node 基础概念 | 藤原拓鞋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="藤原拓鞋">
-<meta property="og:url" content="http://yoursite.com/archives/2020/02/index.html">
+  <meta name="description" content="node 基础知识本知识点总结自朴灵大神的 《深入浅出 node.js》模块机制 | 包与 NPM | Node 的异步 I&#x2F;O | Node 的非 I&#x2F;O 的异步 APINode 异步编程 | 事件发布&#x2F;订阅模式 | 内存控制 | Buffer构建 TCP 服务 | 构建 UDP 套接字 | 构建 HTTP 服务 | 构建 WebSocket 服务">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node 基础概念">
+<meta property="og:url" content="http://yoursite.com/2020/02/01/node-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/index.html">
 <meta property="og:site_name" content="藤原拓鞋">
+<meta property="og:description" content="node 基础知识本知识点总结自朴灵大神的 《深入浅出 node.js》模块机制 | 包与 NPM | Node 的异步 I&#x2F;O | Node 的非 I&#x2F;O 的异步 APINode 异步编程 | 事件发布&#x2F;订阅模式 | 内存控制 | Buffer构建 TCP 服务 | 构建 UDP 套接字 | 构建 HTTP 服务 | 构建 WebSocket 服务">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-02-01T14:12:28.000Z">
+<meta property="article:modified_time" content="2020-06-01T14:55:53.554Z">
 <meta property="article:author" content="藤原拓鞋">
+<meta property="article:tag" content="后端">
+<meta property="article:tag" content="node">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="藤原拓鞋" type="application/atom+xml">
@@ -196,85 +202,229 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-
-
-
-
-
-
-<section class="archives-wrap">
-  <div class="archive-year-wrap">
-    <a href="/archives/2020" class="archive-year">2020</a>
-  </div>
-  <div class="archives">
+            <article id="post-node-基础概念" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/18/Vue-MVVM-%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2020-02-18T08:07:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
-</a>
-        </div>
-    	 
+      <header class=" article-header">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/18/Vue-MVVM-%E6%A8%A1%E5%BC%8F/">Vue MVVM 模式</a>
+  
+    <h1 class="article-title" itemprop="name">
+      node 基础概念
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-    
-
-
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/01/node-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/" class="archive-article-date">
+  <!--显示阅读次数-->
+  
+  <br />
+  <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+    <span class="icon-sort"></span>
+    <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+      阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+    </span>
+  </a>
+  
+  
+  <a href="/2020/02/01/node-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/" class="archive-article-date">
   	<time datetime="2020-02-01T14:12:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-01</time>
 </a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/01/node-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/">node 基础概念</a>
-    </h1>
+  <!-- 这里开始添加以下内容 -->
   
+  <div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <span class="post-meta-item-text"> 字数统计: </span>
+            <span class="post-count">3.3k字</span>
+        </span>
+    </span>
 
-        <div class="article-info info-on-right">
-          
+    <span class="post-time">
+        |
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <span class="post-meta-item-text"> 阅读时长: </span>
+            <span class="post-count">12分</span>
+        </span>
+    </span>
+</div>
+  
+  <!-- 到这里结束 -->
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+
+    
+    <p>node 基础知识<br>本知识点总结自朴灵大神的 <strong>《深入浅出 node.js》</strong><br>模块机制 | 包与 NPM | Node 的异步 I/O | Node 的非 I/O 的异步 API<br>Node 异步编程 | 事件发布/订阅模式 | 内存控制 | Buffer<br>构建 TCP 服务 | 构建 UDP 套接字 | 构建 HTTP 服务 | 构建 WebSocket 服务</p>
+<a id="more"></a>
+
+<h1 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h1><p>先推荐以下链接：<br><a href="https://nodejs.jakeyu.top/" target="_blank" rel="noopener">node 基础教程</a><br><a href="http://nodejs.cn/api/" target="_blank" rel="noopener">node Api 文档</a></p>
+<p>总结 node 特点：</p>
+<ul>
+<li>异步 I/O 从文件读取到网络请求，调用之间无须等待之前的 I/O 结束，多个任务的时间为最长耗时的任务耗时</li>
+<li>事件与回调函数</li>
+<li>单线程</li>
+<li>跨平台</li>
+</ul>
+<h1 id="模块机制"><a href="#模块机制" class="headerlink" title="模块机制"></a>模块机制</h1><p><strong>CommonJs</strong> 为 JavaScript 制定了一个美好的愿景–希望 JavaScript 能够在任何地方运行，涵盖了模块，二进制，Buffer，I/O 流，web 服务器网关接口等规范</p>
+<p>CommonJs 对模块的定义，主要分为模块引用，模块定义，模块标识 3 个部分</p>
+<h4 id="模块引用"><a href="#模块引用" class="headerlink" title="模块引用"></a>模块引用</h4><p>模块引用，存在 require（）方法，这个方法接收模块标识，以此引入一个模块的 API 到当前上下文<br><code>var math=require(&#39;math&#39;)</code></p>
+<h4 id="模块定义"><a href="#模块定义" class="headerlink" title="模块定义"></a>模块定义</h4><p>上下文提供 exports 对象用于导出当前模块的方法或变量，而 module 对象代表模块自身，exports 是 module 的属性</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">exports.add = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">//some code</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="模块标识"><a href="#模块标识" class="headerlink" title="模块标识"></a>模块标识</h4><p><code>require()</code> 内的参数，必须符合小驼峰命名的字符串，或者以.,..开头的相对路径或绝对路径，它可以没有文件名后缀.js</p>
+<h1 id="包与-NPM"><a href="#包与-NPM" class="headerlink" title="包与 NPM"></a>包与 NPM</h1><p>包实际上是一个存档文件，即一个目录打包成压缩文件，安装后解压还原为目录，完全符合 CommonJs 规范的包目录应该包含以下文件：</p>
+<ul>
+<li>package.json: 包描述文件</li>
+<li>bin: 存放可执行二进制文件</li>
+<li>lib：存放 JavaScript 代码</li>
+<li>doc：存放文档</li>
+<li>test：存放单元测试用例的代码</li>
+</ul>
+<p>NPM 安装依赖包<br>执行语句 <code>npm install express</code> 执行该命令后，NPM 会在当前目录下创建<code>node_modules</code>目录，然后在<code>node_modules</code>目录下创建<code>express</code>目录，接着将包解压到这个目录下<br>安装好依赖包后，直接在代码中调用<code>require(&#39;express&#39;)</code>即可引入该包</p>
+<h1 id="Node-的异步-I-O"><a href="#Node-的异步-I-O" class="headerlink" title="Node 的异步 I/O"></a>Node 的异步 I/O</h1><p>异步 I/O 与非阻塞 I/O:</p>
+<ul>
+<li>阻塞 I/O 是调用之后一定要等到系统内核完成所有操作，调用才结束，返回数据</li>
+<li>非阻塞 I/O 在调用之后，不带数据直接返回，要返回数据，还需要通过文件描述符再次读取，因此需要通过轮询技术判断操作是否完成</li>
+</ul>
+<p><strong>Node</strong> 的异步 I/O 模式：</p>
+<ol>
+<li><p>事件循环<br>进程启动时，Node 便会创建一个类似于 while 的循环，每执行一次循环体的过程称为 Tick。每个 Tick 的过程就是查看有无事件待处理，<br>如果有，就取出事件及相关的回调函数。如果存在相关的回调函数，就执行他们。然后进入下一个循环，直到不再有事件处理</p>
+</li>
+<li><p>观察者<br>每个事件循环中有一个或多个观察者，判断是否有事件要处理的过程就是向这些观察者询问是否有事要处理<br>异步 I/O，网络请求等源源不断为 Node 提供不同类型的事件，这些事件被传递到对应的观察者那里，事件循环从观察者那里取出事件并处理</p>
+</li>
+<li><p>请求对象</p>
+</li>
+<li><p>执行回调</p>
+</li>
+</ol>
+<h3 id="Node-的非-I-O-的异步-API"><a href="#Node-的非-I-O-的异步-API" class="headerlink" title="Node 的非 I/O 的异步 API"></a>Node 的非 I/O 的异步 API</h3><ol>
+<li><p>定时器<br>setTimeout()与 setInterval()与浏览器中的 API 一致，实现原理与异步 I/O 比较类似，只是不需要 I/O 线性池的参与<br>创建的定时器会被插入到定时器观察者内部的一个红黑树中，每次 Tick 执行时，会从该红黑树中迭代取出定时器对象，检查是否超过定时事件，<br>如果超过，就形成一个事件，它的回调事件将立即执行，因此定时器实际执行时间会受事件循环影响</p>
+</li>
+<li><p>process.nextTick()<br>调用 process.nextTick()方法，只会将回调函数放入队列中，在下一轮 Tick 中取出来执行，达到立即异步执行一个任务的效果</p>
+</li>
+<li><p>setImmediate()<br>setImmediate()方法与 process.nextTick()方法类似，都是将异步函数延迟执行，<br>但 process.nextTick()中的回调函数执行的优先级要高于 setImmediate(), process.nextTick()的回调函数保存在一个数组中，setImmediate()则是保存在链表中，<br>在每轮循环时，将数组中的回调函数全部执行完，而只执行链表中的一个回调函数</p>
+</li>
+</ol>
+<h1 id="Node-异步编程基础"><a href="#Node-异步编程基础" class="headerlink" title="Node 异步编程基础"></a>Node 异步编程基础</h1><h2 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h2><p>高阶函数是可以把函数作为参数，或是将函数作为返回值的函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//高阶函数实例</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//do somethings for x</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">x, foo</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> foo(x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">get</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//do somethings</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//do somethings</span></span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="偏函数"><a href="#偏函数" class="headerlink" title="偏函数"></a>偏函数</h2><p>偏函数用法是指创建一个调用另一个部分——参数或者变量已经预设好的函数——的函数用法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//偏函数实例</span></span><br><span class="line"><span class="keyword">var</span> isType = <span class="function"><span class="keyword">function</span> (<span class="params">type</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> toString.call(obj) == <span class="string">"[object "</span> + type + <span class="string">"]"</span>;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> isString = isType(<span class="string">"String"</span>); <span class="comment">//用于判断对象是否为字符串的函数</span></span><br><span class="line"><span class="keyword">var</span> isFunction = isType(<span class="string">"Function"</span>); <span class="comment">//用于判断对象是否为函数的函数</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="闭包（内包）"><a href="#闭包（内包）" class="headerlink" title="闭包（内包）"></a>闭包（内包）</h2><p>作用域链上的对象访问只能向上，外部作用域无法向内部作用域访问<br>在 JavaScript 中，实现外部作用域对内部作用域中的变量访问的方法称为闭包，这得益于高阶函数的特性：函数可以作为参数和返回值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//闭包例子</span></span><br><span class="line"><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> bar = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> local = <span class="string">"内部变量"</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> local;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">var</span> baz = bar();</span><br><span class="line">  <span class="built_in">console</span>.log(baz());</span><br><span class="line">  <span class="comment">//通过闭包，foo作用域的baz()执行时，成功访问到了bar作用域内的local变量</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="异步编程解决方案——事件发布-订阅模式"><a href="#异步编程解决方案——事件发布-订阅模式" class="headerlink" title="异步编程解决方案——事件发布/订阅模式"></a>异步编程解决方案——事件发布/订阅模式</h1><p>事件发布/订阅模式可以实现一个事件与多个回调函数的关联，这些回调函数又称为事件侦听器<br>通过 emit()发布事件后，消息会给立即传递给当前事件的所有侦听器执行</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//订阅</span></span><br><span class="line">emitter.on(<span class="string">"event1"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">message</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(message);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//发布</span></span><br><span class="line">emitter.emit(<span class="string">"event1"</span>, <span class="string">"I am message!"</span>);</span><br></pre></td></tr></table></figure>
+
+<p>在事件订阅/发布模式中，通常有一个 once()方法，通过它添加的侦听器只能执行一次，在执行之后就会将它与事件的关联移除。这个特性常常可以帮我们过滤一些重复性的事件响应，解决雪崩问题</p>
+<h1 id="内存控制"><a href="#内存控制" class="headerlink" title="内存控制"></a>内存控制</h1><p>在 V8 引擎中，主要将内存分为新生代和老生代两代，新生代中的对象为存活时间较短的对象，老生带中为存活时间较长的对象</p>
+<p>在分代的基础上，新生代中的对象主要通过 Cheney 算法进行垃圾回收<br>Cheney 算法是一种采用复制的方式实现的垃圾回收算法，将内存分为 From 空间和 To 空间，分配对象时先在 From 空间进行分配<br>当开始进行垃圾回收时，会检查 From 空间中存活的对象，这些存活的对象将被复制到 To 空间中，而非存活空间占用的空间将被释放，完成复制之后，From 空间和 To 空间的角色发生对换</p>
+<p>而当一个对象经过多次复制依然存活时，它会被认为是生命周期较长的对象，随后会被移动到老生带中，这个过程称为晋升</p>
+<p>在分代的基础上，老生带中的对象通过 Mark-Compact 方法管理，标志整理的意思<br>在标记阶段遍历堆中所有的对象，并标记活着的对象，在整理阶段，先清除没有标记的对象，再将活着的对象往一端移动，防止出现内存空间不连续的问题</p>
+<h1 id="Buffer"><a href="#Buffer" class="headerlink" title="Buffer"></a>Buffer</h1><p>Buffer 是一个像 Array 的对象，主要用于操作字节</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Buffer声明实例</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"bbbbbaaaa"</span>;</span><br><span class="line"><span class="keyword">var</span> buf = <span class="keyword">new</span> Buffer(str, <span class="string">"utf-8"</span>);</span><br><span class="line"><span class="keyword">var</span> buf1 = <span class="keyword">new</span> Buffer(<span class="number">100</span>);</span><br><span class="line"><span class="built_in">console</span>.log(buf1.length); <span class="comment">//100</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="构建-TCP-服务"><a href="#构建-TCP-服务" class="headerlink" title="构建 TCP 服务"></a>构建 TCP 服务</h1><p>通过 <code>net.createServer()</code> 构建 TCP 服务器</p>
+<p>TCP 服务的事件分为服务器事件与连接事件</p>
+<p>服务器事件：</p>
+<ul>
+<li>listening：在调用 server.listen()绑定端口或者 Domain Socket 后触发，简洁写法为<code>server.listen(port,listeningListener)</code>,通过第二个参数传入</li>
+<li>connection：每个客户端套接字连接到服务器端时触发，简洁写法为通过 net.createServer(),最后一个参数传递</li>
+<li>close：服务器关闭时触发，调用 server.close()后，服务器将停止接收新的套接字连接，但保持当前连接，所有连接断开后，会触发该事件</li>
+<li>error：当服务器发生异常，将会触发</li>
+</ul>
+<p>连接事件：</p>
+<ul>
+<li>data：当一端调用 write()方法发送数据时，另一端会触发 data 事件，事件传递的参数即是 write()发送的数据</li>
+<li>end：当连接中任意一端发送了 FIN 数据时，会触发该事件</li>
+<li>connect：当套接字与服务器连接成功时会被触发</li>
+<li>drain：当任意一端用 write()发送数据时，当前这端会触发该事件</li>
+<li>error：当异常发生时，触发</li>
+<li>close：套接字完全关闭时，触发</li>
+<li>timeout：当一段时间后，时间不再活跃，触发</li>
+</ul>
+<h1 id="构建-UDP-套接字"><a href="#构建-UDP-套接字" class="headerlink" title="构建 UDP 套接字"></a>构建 UDP 套接字</h1><p>通过 <code>dgram.createSocket()</code> 创建 UDP 套接字</p>
+<p>UDP 不是面向连接的<br>TCP 中连接一旦建立，所有的会话都基于连接完成，客户如果要与另一个 TCP 服务通信，需要令创建一个套接字<br>而在 UDP 中，一个套接字可以与多个 UDP 服务通信</p>
+<p>想要让 UDP 套接字接收网络信息，只要调用 <code>dgram.bind(port,[address])</code> 方法对网卡和端口进行绑定即可</p>
+<p>当套接字对象 socket 用在客户端时，可以调用<code>send()</code>方法发送信息到网络中：<br><code>socket.send(buf,offset,length,port,address,[callback])</code> 参数分别为：发送的 Buffer，Buffer 的偏移，Buffer 的长度，目标端口，目标地址，发送完成后的回调</p>
+<p>UDP 套接字事件：</p>
+<ul>
+<li>message：当 UDP 套接字侦听网卡端口后，接收到信息时触发事件，触发携带的数据为消息 Buffer 对象和一个远程地址信息</li>
+<li>listening：当 UDP 套接字开始侦听时触发</li>
+<li>close：调用 close()方法时触发，并且不再触发 message 事件</li>
+<li>error：发生异常时触发</li>
+</ul>
+<h1 id="构建-HTTP-服务"><a href="#构建-HTTP-服务" class="headerlink" title="构建 HTTP 服务"></a>构建 HTTP 服务</h1><p>通过 <code>http.createServer(function(req,res){})</code> 构建 http 服务<br>对 TCP 连接的读操作，http 模块将其封装为 ServerRequest 对象，对应 req 的具体操作，响应对象则对应 res</p>
+<p>HTTP 服务端事件：</p>
+<ul>
+<li>connection：在开始 http 请求和响应前，客户端与服务器需要建立底层的 TCP 连接，这个连接开启了 keep-alive，服务器触发 connection 事件</li>
+<li>request：建立 TCP 连接后，http 模块底层会从数据流中抽象出 http 请求和 http 响应，当请求数据发送到服务端，解析出 http 请求头后，会触发该事件</li>
+<li>close：与 TCP 服务器行为一致</li>
+<li>checkContinue：当客户端发送较大数据，先发送一个特殊头部带，服务器解析出后，触发该事件</li>
+<li>connect：客户端发送 CONNECT 请求时触发</li>
+<li>upgrade：当客户端要求升级协议，在请求头带上 Upgrade 字段，服务器端接收到后触发该事件</li>
+<li>clientError：连接的客户端触发 error 事件时，错误会传递到服务器端，此时触发该事件</li>
+</ul>
+<p>HTTP 客户端事件：</p>
+<ul>
+<li>response：与服务器端的 request 事件对应的客户端在请求发出后得到服务器端响应时，触发 response 事件</li>
+<li>socket：底层连接池中建立的连接分配给当前请求对象时，触发 socket 事件</li>
+<li>connect：客户端向服务器端发送 CONNECT 请求时，如果服务器端响应了 200 状态码，客户端会触发 connect 事件</li>
+<li>upgrade：客户端向服务器端发送了 Upgrade 请求时，如果服务器端响应了正确状态，客户端会触发该事件</li>
+<li>continue：客户端企图发送大数据量，发送了头信息，服务器端响应正确状态时，客户端会触发该事件</li>
+</ul>
+<h1 id="构建-WebSocket-服务"><a href="#构建-WebSocket-服务" class="headerlink" title="构建 WebSocket 服务"></a>构建 WebSocket 服务</h1><p><code>new WebSocket(&#39;&#39;)</code></p>
+<p>使用 WebSocket，客户端只需一个 TCP 连接就可完成双向通信，在频繁通信时，无须频繁断开连接和重发请求<br>两端只建立一个 TCP 连接，并且服务器端可以推送数据到客户端，远比 http 模式灵活高效</p>
+<p>建立 WebSocket，需要两个部分：握手和数据连接<br>握手时，需要请求服务器端升级协议为 WebSocket，请求头部添加：</p>
+<ul>
+<li>Upgrade：websocket</li>
+<li>Connection：Upgrade</li>
+</ul>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>本文只大致描述 node 基础知识，若有帮助，可以打个赏哦亲~~</p>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:;" class="page-reward-btn tooltip-top">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>感谢您打赏帅气的农民<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/social/alipay.JPG">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/social/wechatpay.JPG">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -290,7 +440,7 @@
 		</ul>
 	</div>
 
-          
+    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -303,67 +453,129 @@
 	</div>
 
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+  <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+  <p>扫一扫，分享到微信</p>
+  <div class="wx-qrcode">
+    <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/01/node-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/" alt="微信分享二维码">
+  </div>
+</div>
+
+<div class="mask js-mask"></div>
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-    
 
 
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/01/Vue-%E7%AE%80%E6%98%93%E5%95%86%E5%9F%8E%E5%BC%80%E5%8F%91/" class="archive-article-date">
-  	<time datetime="2020-02-01T09:25:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-01</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/01/Vue-%E7%AE%80%E6%98%93%E5%95%86%E5%9F%8E%E5%BC%80%E5%8F%91/">Vue 简易商城开发</a>
-    </h1>
+    <a href="/2020/02/18/Vue-MVVM-%E6%A8%A1%E5%BC%8F/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Vue MVVM 模式
+        
+      </div>
+    </a>
   
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
+  
+    <a href="/2020/02/01/Vue-%E7%AE%80%E6%98%93%E5%95%86%E5%9F%8E%E5%BC%80%E5%8F%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Vue 简易商城开发</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-    
-    
-  </div>
-</section>
+        
+        
+    </div>
+</aside>
 
 
 
+
+
+
+
+
+
+
+
+
+<div id="gitment-ctn"></div>
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  var gitment = new Gitment({
+    id: "http://yoursite.com/2020/02/01/node-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/",
+    //id: 'Sat Feb 01 2020 22:12:28 GMT+0800',
+    owner: 'li-car-fei',
+    repo: 'li-car-fei.github.io',
+    oauth: {
+      client_id: 'c455113c0bdc87f92fd0',
+      client_secret: 'a88bd5b381138f689b6157e17e03aad11d4cd4e1',
+    },
+  })
+  gitment.render('gitment-ctn')
+</script>
 
 
           </div>
@@ -392,8 +604,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-			isArchive: true,
+		isPost: true,
+			isArchive: false,
 				isTag: false,
 					isCategory: false,
 						open_in_new: true,
