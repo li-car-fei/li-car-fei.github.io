@@ -6,14 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>藤原拓鞋</title>
+  <title>node 基础（七） | 藤原拓鞋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="藤原拓鞋">
-<meta property="og:url" content="http://yoursite.com/page/5/index.html">
+  <meta name="description" content="node 基础（七）搭建简单的Koa服务，配置路由，使用中间件Koa搭配 mongoDB 实现数据的简单操作">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node 基础（七）">
+<meta property="og:url" content="http://yoursite.com/2020/03/12/node-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%83%EF%BC%89/index.html">
 <meta property="og:site_name" content="藤原拓鞋">
+<meta property="og:description" content="node 基础（七）搭建简单的Koa服务，配置路由，使用中间件Koa搭配 mongoDB 实现数据的简单操作">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-12T06:00:46.000Z">
+<meta property="article:modified_time" content="2020-06-02T06:45:31.500Z">
 <meta property="article:author" content="藤原拓鞋">
+<meta property="article:tag" content="后端">
+<meta property="article:tag" content="node">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="藤原拓鞋" type="application/atom+xml">
@@ -196,24 +202,30 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-
-<article id="post-Vue-简易商城开发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-node-基础（七）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class=" article-header">
   
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/01/Vue-%E7%AE%80%E6%98%93%E5%95%86%E5%9F%8E%E5%BC%80%E5%8F%91/">Vue 简易商城开发</a>
+    <h1 class="article-title" itemprop="name">
+      node 基础（七）
     </h1>
   
 
   <!--显示阅读次数-->
   
+  <br />
+  <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+    <span class="icon-sort"></span>
+    <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+      阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+    </span>
+  </a>
   
-  <a href="/2020/02/01/Vue-%E7%AE%80%E6%98%93%E5%95%86%E5%9F%8E%E5%BC%80%E5%8F%91/" class="archive-article-date">
-  	<time datetime="2020-02-01T09:25:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-01</time>
+  
+  <a href="/2020/03/12/node-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%83%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2020-03-12T06:00:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-12</time>
 </a>
   
   <!-- 这里开始添加以下内容 -->
@@ -223,7 +235,7 @@
         <span class="post-meta-item-icon">
             <i class="fa fa-keyboard-o"></i>
             <span class="post-meta-item-text"> 字数统计: </span>
-            <span class="post-count">3.5k字</span>
+            <span class="post-count">1.2k字</span>
         </span>
     </span>
 
@@ -232,7 +244,7 @@
         <span class="post-meta-item-icon">
             <i class="fa fa-hourglass-half"></i>
             <span class="post-meta-item-text"> 阅读时长: </span>
-            <span class="post-count">16分</span>
+            <span class="post-count">6分</span>
         </span>
     </span>
 </div>
@@ -244,122 +256,58 @@
     
 
     
-    <p>Vue 开发简易商城，运用 <strong>Vuex</strong> <strong>VueRouter</strong><br>localhost 本地暂存数据，模拟简易商城功能<br>商品筛选 | 商品添加购物车 | 登录注册 | 清空购物车 | localStorage 模拟仓库库存<br><img src="/images/Vue-shop/p1.PNG" alt=""></p>
-    
+    <p>node 基础（七）<br>搭建简单的<strong>Koa</strong>服务，配置路由，使用中间件<br><strong>Koa</strong>搭配 mongoDB 实现数据的简单操作</p>
+<a id="more"></a>
+
+<h1 id="连接数据库-demo"><a href="#连接数据库-demo" class="headerlink" title="连接数据库 demo"></a>连接数据库 demo</h1><p>我们先看到如何在 koa 中使用 mongoDB，其实这和在 express 中一样，如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> MongoClient = <span class="built_in">require</span>(<span class="string">"mongodb"</span>).MongoClient;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> dbUrl = <span class="string">"mongodb://127.0.0.1:27017"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> dbName = <span class="string">"test"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//连接数据库</span></span><br><span class="line"><span class="built_in">console</span>.time(<span class="string">"start"</span>);</span><br><span class="line">MongoClient.connect(dbUrl, (err, client) =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span> (err) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> db = client.db(dbName);</span><br><span class="line">  <span class="built_in">console</span>.timeEnd(<span class="string">"start"</span>);</span><br><span class="line">  <span class="comment">//增加数据</span></span><br><span class="line"></span><br><span class="line">  db.collection(<span class="string">"user"</span>).insertOne(&#123; <span class="attr">name</span>: <span class="string">"wangwu"</span>, <span class="attr">age</span>: <span class="number">26</span> &#125;, <span class="function"><span class="keyword">function</span> (<span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">    err,</span></span></span><br><span class="line"><span class="function"><span class="params">    result</span></span></span><br><span class="line"><span class="function"><span class="params">  </span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!err) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"增加数据成功"</span>);</span><br><span class="line">      client.close();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>从上面的例子可以看到，每次操作数据都需要进行一次<code>connect</code>，这会非常损耗内存，我们可以通过单例的模式封装一个对象，定义一个内置函数完成连接操作，然后通过一个变量<code>this.dbClient</code> 储存连接数据库后返回的操作对象，用此操作对象进行后续的数据操作</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 操作数据库的类</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//引入操作类</span></span><br><span class="line"><span class="keyword">var</span> MongoClient = <span class="built_in">require</span>(<span class="string">"mongodb"</span>).MongoClient;</span><br><span class="line"><span class="comment">// 引入配置信息</span></span><br><span class="line"><span class="keyword">var</span> Config = <span class="built_in">require</span>(<span class="string">"./config.js"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//引入ObjectID用作数据查询</span></span><br><span class="line"><span class="keyword">const</span> ObjectID = <span class="built_in">require</span>(<span class="string">"mongodb"</span>).ObjectID;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Db</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> getInstance() &#123;</span><br><span class="line">    <span class="comment">//单例，确保只连接一次数据库</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!Db.instance) &#123;</span><br><span class="line">      Db.instance = <span class="keyword">new</span> Db();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> Db.instance;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">    <span class="keyword">this</span>.dbClient = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">this</span>.connect(); <span class="comment">//初始化时链接数据库</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  connect() &#123;</span><br><span class="line">    <span class="comment">//连接数据库</span></span><br><span class="line">    <span class="comment">// 先获取this定义为that， 在异步中使用</span></span><br><span class="line">    <span class="keyword">let</span> that = <span class="keyword">this</span>;</span><br><span class="line">    <span class="comment">// 返回异步 ， 调用时用then 异步调用</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 判断有没有dbClient，如果没有连接过，则连接并返回</span></span><br><span class="line">      <span class="keyword">if</span> (!that.dbClient) &#123;</span><br><span class="line">        MongoClient.connect(Config.dbUrl, (err, client) =&gt; &#123;</span><br><span class="line">          <span class="keyword">if</span> (err) &#123;</span><br><span class="line">            reject(err);</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//connect后只是连接到本地，还没有连接到指定的数据库</span></span><br><span class="line">            that.dbClient = client.db(Config.dbName); <span class="comment">// 这里连接到指定的数据库</span></span><br><span class="line">            resolve(that.dbClient);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">//如果有，则返回dbClient</span></span><br><span class="line">        resolve(that.dbClient);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  find(collectionName, json) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>.connect().then(</span><br><span class="line">        (db) =&gt; &#123;</span><br><span class="line">          <span class="comment">//根据传入的collection和查找json 查询数据</span></span><br><span class="line">          <span class="keyword">var</span> result = db.collection(collectionName).find(json);</span><br><span class="line"></span><br><span class="line">          <span class="comment">// 返回数据</span></span><br><span class="line">          result.toArray(<span class="function"><span class="keyword">function</span> (<span class="params">err, docs</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (err) &#123;</span><br><span class="line">              reject(err);</span><br><span class="line">              <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            resolve(docs);</span><br><span class="line">          &#125;);</span><br><span class="line">        &#125;,</span><br><span class="line">        (err) =&gt; &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(err);</span><br><span class="line">        &#125;</span><br><span class="line">      );</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  update(collectionName, json1, json2) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>.connect().then(</span><br><span class="line">        (db) =&gt; &#123;</span><br><span class="line">          db.collection(collectionName).updateOne(</span><br><span class="line">            json1,</span><br><span class="line">            &#123;</span><br><span class="line">              $<span class="keyword">set</span>: json2,</span><br><span class="line">            &#125;,</span><br><span class="line">            (err, result) =&gt; &#123;</span><br><span class="line">              <span class="keyword">if</span> (err) &#123;</span><br><span class="line">                reject(err);</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">              &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                resolve(result);</span><br><span class="line">              &#125;</span><br><span class="line">            &#125;</span><br><span class="line">          );</span><br><span class="line">        &#125;,</span><br><span class="line">        (err) =&gt; &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(err);</span><br><span class="line">        &#125;</span><br><span class="line">      );</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  insert(collectionName, json) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>.connect().then(</span><br><span class="line">        (db) =&gt; &#123;</span><br><span class="line">          db.collection(collectionName).insertOne(json, (err, result) =&gt; &#123;</span><br><span class="line">            <span class="keyword">if</span> (err) &#123;</span><br><span class="line">              reject(err);</span><br><span class="line">              <span class="keyword">return</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">              resolve(result);</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;);</span><br><span class="line">        &#125;,</span><br><span class="line">        (err) =&gt; &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(err);</span><br><span class="line">        &#125;</span><br><span class="line">      );</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  remove(collectionName, json) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>.connect().then(</span><br><span class="line">        (db) =&gt; &#123;</span><br><span class="line">          db.collection(collectionName).removeOne(json, (err, result) =&gt; &#123;</span><br><span class="line">            <span class="keyword">if</span> (err) &#123;</span><br><span class="line">              reject(err);</span><br><span class="line">              <span class="keyword">return</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">              resolve(result);</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;);</span><br><span class="line">        &#125;,</span><br><span class="line">        (err) =&gt; &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(err);</span><br><span class="line">        &#125;</span><br><span class="line">      );</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  getObjectID(id) &#123;</span><br><span class="line">    <span class="comment">// mongodb中用 _id 查询需要ObjectID</span></span><br><span class="line">    <span class="comment">// 把一个字符串id转换成对象ObjectID</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> ObjectID(id);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = Db.getInstance();</span><br></pre></td></tr></table></figure>
+
+<p><code>config.js</code>中是本地数据库的信息，如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app = &#123;</span><br><span class="line">  dbUrl: <span class="string">"mongodb://127.0.0.1:27017"</span>,</span><br><span class="line">  dbName: <span class="string">"test"</span>,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">module</span>.exports = app;</span><br></pre></td></tr></table></figure>
+
+<h1 id="搭建服务"><a href="#搭建服务" class="headerlink" title="搭建服务"></a>搭建服务</h1><p>在前一篇博客中，已经讲解了 koa 的基本使用，此处直接给出代码，大家可自行阅读：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Koa = <span class="built_in">require</span>(<span class="string">"koa"</span>),</span><br><span class="line">  router = <span class="built_in">require</span>(<span class="string">"koa-router"</span>)(),</span><br><span class="line">  render = <span class="built_in">require</span>(<span class="string">"koa-art-template"</span>),</span><br><span class="line">  path = <span class="built_in">require</span>(<span class="string">"path"</span>),</span><br><span class="line">  DB = <span class="built_in">require</span>(<span class="string">"./module/db.js"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> app = <span class="keyword">new</span> Koa();</span><br><span class="line"></span><br><span class="line"><span class="comment">//配置 koa-art-template模板引擎</span></span><br><span class="line">render(app, &#123;</span><br><span class="line">  root: path.join(__dirname, <span class="string">"views"</span>), <span class="comment">// 视图的位置</span></span><br><span class="line">  extname: <span class="string">".html"</span>, <span class="comment">// 后缀名</span></span><br><span class="line">  debug: process.env.NODE_ENV !== <span class="string">"production"</span>, <span class="comment">//是否开启调试模式</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">router.get(<span class="string">"/"</span>, <span class="keyword">async</span> (ctx) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.time(<span class="string">"start"</span>);</span><br><span class="line">  <span class="keyword">var</span> result = <span class="keyword">await</span> DB.find(<span class="string">"user"</span>, &#123;&#125;);</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.timeEnd(<span class="string">"start"</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(result);</span><br><span class="line">  <span class="keyword">await</span> ctx.render(<span class="string">"index"</span>, &#123;</span><br><span class="line">    list: &#123;</span><br><span class="line">      name: <span class="string">"张三"</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">router.get(<span class="string">"/news"</span>, <span class="keyword">async</span> (ctx) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.time(<span class="string">"start"</span>);</span><br><span class="line">  <span class="keyword">var</span> result = <span class="keyword">await</span> DB.find(<span class="string">"user"</span>, &#123;&#125;);</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.timeEnd(<span class="string">"start"</span>);</span><br><span class="line">  ctx.body = <span class="string">"这是一个新闻页面"</span>;</span><br><span class="line">&#125;);</span><br><span class="line">router.get(<span class="string">"/add"</span>, <span class="keyword">async</span> (ctx) =&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> result = <span class="keyword">await</span> DB.insert(<span class="string">"user"</span>, &#123; <span class="attr">name</span>: <span class="string">"zhaoliu"</span>, <span class="attr">age</span>: <span class="number">29</span> &#125;);</span><br><span class="line">  <span class="built_in">console</span>.log(result);</span><br><span class="line">  ctx.body = <span class="string">"这是一个增加页面"</span>;</span><br><span class="line">&#125;);</span><br><span class="line">router.get(<span class="string">"/update"</span>, <span class="keyword">async</span> (ctx) =&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> result = <span class="keyword">await</span> DB.insert(<span class="string">"user"</span>, &#123; <span class="attr">name</span>: <span class="string">"zhaoliu"</span> &#125;, &#123; <span class="attr">name</span>: <span class="string">"lisi"</span> &#125;);</span><br><span class="line">  <span class="built_in">console</span>.log(result);</span><br><span class="line">  ctx.body = <span class="string">"这是一个更新页面"</span>;</span><br><span class="line">&#125;);</span><br><span class="line">router.get(<span class="string">"/delete"</span>, <span class="keyword">async</span> (ctx) =&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> result = <span class="keyword">await</span> DB.remove(<span class="string">"user"</span>, &#123; <span class="attr">name</span>: <span class="string">"zhaoliu"</span> &#125;);</span><br><span class="line">  <span class="built_in">console</span>.log(result);</span><br><span class="line">  ctx.body = <span class="string">"这是一个删除页面"</span>;</span><br><span class="line">&#125;);</span><br><span class="line">router.get(<span class="string">"/edit"</span>, <span class="keyword">async</span> (ctx) =&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> id = ctx.query.id;</span><br><span class="line">  <span class="keyword">let</span> data = <span class="keyword">await</span> DB.find(<span class="string">"user"</span>, &#123; <span class="attr">_id</span>: DB.getObjectID(id) &#125;);</span><br><span class="line">  <span class="built_in">console</span>.log(data);</span><br><span class="line">  <span class="keyword">await</span> ctx.render(<span class="string">"edit"</span>, &#123;</span><br><span class="line">    list: data[<span class="number">0</span>],</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">router.post(<span class="string">"/doEdit"</span>, <span class="keyword">async</span> (ctx) =&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> name = ctx.request.body.name;</span><br><span class="line">  <span class="keyword">let</span> age = ctx.request.body.age;</span><br><span class="line">  <span class="keyword">let</span> data = <span class="keyword">await</span> DB.updated(</span><br><span class="line">    <span class="string">"user"</span>,</span><br><span class="line">    &#123; <span class="attr">_id</span>: DB.getObjectID(ctx.request.body.id) &#125;,</span><br><span class="line">    &#123; name, age &#125;</span><br><span class="line">  );</span><br><span class="line">  <span class="keyword">if</span> (data.result.ok) &#123;</span><br><span class="line">    ctx.redirect(<span class="string">"/"</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    ctx.body = <span class="string">"编辑失败"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">router.get(<span class="string">"/dodelete"</span>, <span class="keyword">async</span> (ctx) =&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> id = ctx.query.id;</span><br><span class="line">  <span class="keyword">let</span> data = <span class="keyword">await</span> DB.remove(<span class="string">"user"</span>, &#123; <span class="attr">_id</span>: DB.getObjectID(id) &#125;);</span><br><span class="line">  <span class="keyword">if</span> (data.result.ok) &#123;</span><br><span class="line">    ctx.redirect(<span class="string">"/"</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    ctx.body = <span class="string">"删除失败"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.use(router.routes()); <span class="comment">/*启动路由*/</span></span><br><span class="line">app.use(router.allowedMethods());</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>);</span><br></pre></td></tr></table></figure>
+
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>以上搭建了<strong>koa</strong>的基础服务</p>
+<p>有帮助的可以打个赏哦亲~~</p>
+
     
 
     
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/02/01/Vue-%E7%AE%80%E6%98%93%E5%95%86%E5%9F%8E%E5%BC%80%E5%8F%91/">查看全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+    <div class="page-reward">
+      <a href="javascript:;" class="page-reward-btn tooltip-top">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>感谢您打赏帅气的农民<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/social/alipay.JPG">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/social/wechatpay.JPG">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
         </div>
-        
-        
+      </a>
     </div>
-</aside>
-
-
-
-
-<article id="post-Vue-常用开发技巧优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/31/Vue-%E5%B8%B8%E7%94%A8%E5%BC%80%E5%8F%91%E6%8A%80%E5%B7%A7%E4%BC%98%E5%8C%96/">Vue 常用开发技巧优化</a>
-    </h1>
-  
-
-  <!--显示阅读次数-->
-  
-  
-  <a href="/2020/01/31/Vue-%E5%B8%B8%E7%94%A8%E5%BC%80%E5%8F%91%E6%8A%80%E5%B7%A7%E4%BC%98%E5%8C%96/" class="archive-article-date">
-  	<time datetime="2020-01-31T03:11:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-31</time>
-</a>
-  
-  <!-- 这里开始添加以下内容 -->
-  
-  <div style="margin-top:10px;">
-    <span class="post-time">
-        <span class="post-meta-item-icon">
-            <i class="fa fa-keyboard-o"></i>
-            <span class="post-meta-item-text"> 字数统计: </span>
-            <span class="post-count">2.2k字</span>
-        </span>
-    </span>
-
-    <span class="post-time">
-        |
-        <span class="post-meta-item-icon">
-            <i class="fa fa-hourglass-half"></i>
-            <span class="post-meta-item-text"> 阅读时长: </span>
-            <span class="post-count">10分</span>
-        </span>
-    </span>
-</div>
-  
-  <!-- 到这里结束 -->
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-
-    
-    <p>对 Vue 常用命令与方法的解析与优化</p>
-<p>路由参数解耦<strong>props</strong> 函数式组件<strong>template</strong> 样式穿透 <strong>&gt;&gt;&gt; /deep/</strong> watch 高阶使用<br>事件参数 <strong>$event</strong> 监听组件生命周期 <strong>@hook:mounted</strong> 手动挂载组件</p>
-    
-    
-
     
     
   </div>
@@ -370,124 +318,13 @@
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/01/31/Vue-%E5%B8%B8%E7%94%A8%E5%BC%80%E5%8F%91%E6%8A%80%E5%B7%A7%E4%BC%98%E5%8C%96/">查看全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-<article id="post-Django-基础篇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/27/Django-%E5%9F%BA%E7%A1%80%E7%AF%87/">Django 基础篇</a>
-    </h1>
-  
-
-  <!--显示阅读次数-->
-  
-  
-  <a href="/2019/10/27/Django-%E5%9F%BA%E7%A1%80%E7%AF%87/" class="archive-article-date">
-  	<time datetime="2019-10-27T13:33:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-27</time>
-</a>
-  
-  <!-- 这里开始添加以下内容 -->
-  
-  <div style="margin-top:10px;">
-    <span class="post-time">
-        <span class="post-meta-item-icon">
-            <i class="fa fa-keyboard-o"></i>
-            <span class="post-meta-item-text"> 字数统计: </span>
-            <span class="post-count">1.3k字</span>
-        </span>
-    </span>
-
-    <span class="post-time">
-        |
-        <span class="post-meta-item-icon">
-            <i class="fa fa-hourglass-half"></i>
-            <span class="post-meta-item-text"> 阅读时长: </span>
-            <span class="post-count">5分</span>
-        </span>
-    </span>
-</div>
-  
-  <!-- 到这里结束 -->
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-
-    
-    <p>Django 基础<br>表单设置 | 数据库关联 | 静态文件配置<br>路由设置 | 视图函数编写</p>
-    
-    
-
-    
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Django</a>
-        		</li>
-      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">后端</a>
         		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
+        		</li>
       		
 		</ul>
 	</div>
@@ -498,7 +335,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Django//" class="article-tag-list-link color2">Django</a>
+        			<a href="/categories/node//" class="article-tag-list-link color5">node</a>
         		</li>
       		
 		</ul>
@@ -506,152 +343,128 @@
 
 
     
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/10/27/Django-%E5%9F%BA%E7%A1%80%E7%AF%87/">查看全文 >></a>
-    </p>
-    
 
     
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-<article id="post-基于gitbash对github的操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/23/%E5%9F%BA%E4%BA%8Egitbash%E5%AF%B9github%E7%9A%84%E6%93%8D%E4%BD%9C/">基于gitbash对github的操作</a>
-    </h1>
-  
-
-  <!--显示阅读次数-->
-  
-  
-  <a href="/2019/05/23/%E5%9F%BA%E4%BA%8Egitbash%E5%AF%B9github%E7%9A%84%E6%93%8D%E4%BD%9C/" class="archive-article-date">
-  	<time datetime="2019-05-23T09:09:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-23</time>
-</a>
-  
-  <!-- 这里开始添加以下内容 -->
-  
-  <div style="margin-top:10px;">
-    <span class="post-time">
-        <span class="post-meta-item-icon">
-            <i class="fa fa-keyboard-o"></i>
-            <span class="post-meta-item-text"> 字数统计: </span>
-            <span class="post-count">891字</span>
-        </span>
+      </div>
     </span>
-
-    <span class="post-time">
-        |
-        <span class="post-meta-item-icon">
-            <i class="fa fa-hourglass-half"></i>
-            <span class="post-meta-item-text"> 阅读时长: </span>
-            <span class="post-count">3分</span>
-        </span>
-    </span>
+  </div>
 </div>
-  
-  <!-- 到这里结束 -->
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
 
-    
-    <p>Git 基础操作解析</p>
-    
-    
-
-    
-    
+<div class="page-modal wx-share js-wx-box">
+  <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+  <p>扫一扫，分享到微信</p>
+  <div class="wx-qrcode">
+    <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/12/node-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%83%EF%BC%89/" alt="微信分享二维码">
   </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
+</div>
 
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/踩坑记录//" class="article-tag-list-link color5">踩坑记录</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/05/23/%E5%9F%BA%E4%BA%8Egitbash%E5%AF%B9github%E7%9A%84%E6%93%8D%E4%BD%9C/">查看全文 >></a>
-    </p>
-    
-
+<div class="mask js-mask"></div>
     
     <div class="clearfix"></div>
   </div>
   </div>
 </article>
 
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
+
+<nav id="article-nav">
+  
+    <a href="/2020/03/12/Vue-router-%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
+          Vue-router 源码解析
         
-        
-    </div>
-</aside>
-
-
-
-
-
-<nav id="page-nav">
-  <a class="extend prev" rel="prev" href="/page/4/"> Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+      </div>
+    </a>
+  
+  
+    <a href="/2020/03/02/node-%E5%9F%BA%E7%A1%80%EF%BC%88%E5%85%AD%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">node 基础（六）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
 </nav>
 
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="gitment-ctn"></div>
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  var gitment = new Gitment({
+    id: "http://yoursite.com/2020/03/12/node-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%83%EF%BC%89/",
+    //id: 'Thu Mar 12 2020 14:00:46 GMT+0800',
+    owner: 'li-car-fei',
+    repo: 'li-car-fei.github.io',
+    oauth: {
+      client_id: 'c455113c0bdc87f92fd0',
+      client_secret: 'a88bd5b381138f689b6157e17e03aad11d4cd4e1',
+    },
+  })
+  gitment.render('gitment-ctn')
+</script>
 
 
           </div>
@@ -679,8 +492,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 			isArchive: false,
 				isTag: false,
 					isCategory: false,
