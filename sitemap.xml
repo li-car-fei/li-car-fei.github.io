@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/01/17/Vue-Todolist-%E5%BC%80%E5%8F%91/</loc>
+    
+    <lastmod>2020-06-04T14:03:41.604Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/01/04/%E7%AE%80%E5%8D%95%E5%BC%B9%E5%B9%95%E5%AE%9E%E7%8E%B0/</loc>
+    
+    <lastmod>2020-06-04T13:42:41.331Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/06/03/Django-Restful-Framework-%E5%B8%B8%E7%94%A8%E8%A7%86%E5%9B%BE/</loc>
     
     <lastmod>2020-06-04T09:37:07.886Z</lastmod>
