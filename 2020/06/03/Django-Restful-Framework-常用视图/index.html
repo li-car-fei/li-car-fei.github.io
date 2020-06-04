@@ -6,14 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 后端 | 藤原拓鞋</title>
+  <title>Django-Restful-Framework-常用视图 | 藤原拓鞋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="藤原拓鞋">
-<meta property="og:url" content="http://yoursite.com/tags/%E5%90%8E%E7%AB%AF/page/2/index.html">
+  <meta name="description" content="Django Restful Framework 基础 Api （三）常用视图类介绍以及使用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Django-Restful-Framework-常用视图">
+<meta property="og:url" content="http://yoursite.com/2020/06/03/Django-Restful-Framework-%E5%B8%B8%E7%94%A8%E8%A7%86%E5%9B%BE/index.html">
 <meta property="og:site_name" content="藤原拓鞋">
+<meta property="og:description" content="Django Restful Framework 基础 Api （三）常用视图类介绍以及使用">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-03T15:10:48.000Z">
+<meta property="article:modified_time" content="2020-06-04T09:37:07.886Z">
 <meta property="article:author" content="藤原拓鞋">
+<meta property="article:tag" content="Django">
+<meta property="article:tag" content="后端">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="藤原拓鞋" type="application/atom+xml">
@@ -196,259 +202,170 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-
-
-
-
-
-
-<section class="archives-wrap">
-  <div class="archive-year-wrap">
-    <a href="/archives/2020" class="archive-year">2020</a>
-  </div>
-  <div class="archives">
+            <article id="post-Django-Restful-Framework-常用视图" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/15/node-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2020-02-15T15:35:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-15</time>
-</a>
-        </div>
-    	 
+      <header class=" article-header">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/15/node-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/">node 基础（三）</a>
+  
+    <h1 class="article-title" itemprop="name">
+      Django-Restful-Framework-常用视图
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">后端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/node//" class="article-tag-list-link color5">node</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-    
-
-
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/06/node-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2020-02-06T15:23:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-06</time>
+  <!--显示阅读次数-->
+  
+  <br />
+  <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+    <span class="icon-sort"></span>
+    <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+      阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+    </span>
+  </a>
+  
+  
+  <a href="/2020/06/03/Django-Restful-Framework-%E5%B8%B8%E7%94%A8%E8%A7%86%E5%9B%BE/" class="archive-article-date">
+  	<time datetime="2020-06-03T15:10:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-03</time>
 </a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/06/node-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/">node 基础（二）</a>
-    </h1>
+  <!-- 这里开始添加以下内容 -->
   
+  <div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <span class="post-meta-item-text"> 字数统计: </span>
+            <span class="post-count">1.8k字</span>
+        </span>
+    </span>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">后端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/node//" class="article-tag-list-link color5">node</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-    
-
-
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/04/node-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2020-02-04T15:01:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/04/node-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/">node 基础（一）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">后端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/node//" class="article-tag-list-link color5">node</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-    
-
-
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/01/node-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/" class="archive-article-date">
-  	<time datetime="2020-02-01T14:12:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/01/node-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/">node 基础概念</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">后端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/node//" class="article-tag-list-link color5">node</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-    
-
-
-
+    <span class="post-time">
+        |
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <span class="post-meta-item-text"> 阅读时长: </span>
+            <span class="post-count">7分</span>
+        </span>
+    </span>
 </div>
-</section>
-
-
-<section class="archives-wrap">
-  <div class="archive-year-wrap">
-    <a href="/archives/2019" class="archive-year">2019</a>
-  </div>
-  <div class="archives">
+  
+  <!-- 到这里结束 -->
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/27/Django-%E5%9F%BA%E7%A1%80%E7%AF%87/" class="archive-article-date">
-  	<time datetime="2019-10-27T13:33:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/27/Django-%E5%9F%BA%E7%A1%80%E7%AF%87/">Django 基础篇</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
+    
+    <p>Django Restful Framework 基础 Api （三）<br>常用视图类介绍以及使用</p>
+<a id="more"></a>
+
+<h1 id="通用视图"><a href="#通用视图" class="headerlink" title="通用视图"></a>通用视图</h1><p>drf 基于类的视图允许我们编写可重复使用的模式，并且提供了大量常用视图及其常用模式，运用各类常用视图可以快速构建紧密映射到数据库的 API 视图，而如果视图不符合我们的需求，可以继承于常规的 APIView 类，自行扩展。</p>
+<p>在使用通用试图时，我们需要设置几个属性，如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib.auth.models <span class="keyword">import</span> User</span><br><span class="line"><span class="keyword">from</span> myapp.serializers <span class="keyword">import</span> UserSerializer</span><br><span class="line"><span class="keyword">from</span> rest_framework <span class="keyword">import</span> generics</span><br><span class="line"><span class="keyword">from</span> rest_framework.permissions <span class="keyword">import</span> IsAdminUser</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserList</span><span class="params">(generics.ListCreateAPIView)</span>:</span></span><br><span class="line">    queryset = User.objects.all()</span><br><span class="line">    serializer_class = UserSerializer</span><br><span class="line">    permission_classes = (IsAdminUser,)</span><br></pre></td></tr></table></figure>
+
+<p>若我们想要重写视图类的各种方法，可以如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserList</span><span class="params">(generics.ListCreateAPIView)</span>:</span></span><br><span class="line">    queryset = User.objects.all()</span><br><span class="line">    serializer_class = UserSerializer</span><br><span class="line">    permission_classes = (IsAdminUser,)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">list</span><span class="params">(self, request)</span>:</span></span><br><span class="line">        <span class="comment"># 注意使用`get_queryset()`而不是`self.queryset`</span></span><br><span class="line">        queryset = self.get_queryset()</span><br><span class="line">        serializer = UserSerializer(queryset, many=<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">return</span> Response(serializer.data)</span><br></pre></td></tr></table></figure>
+
+<p>甚至，可以通过 <code>.as_view()</code> 方法传递类属性，这样连视图类都不用写了</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url(<span class="string">r'^/users/'</span>, ListCreateAPIView.as_view(queryset=User.objects.all(), serializer_class=UserSerializer), name=<span class="string">'user-list'</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="GenericAPIView"><a href="#GenericAPIView" class="headerlink" title="GenericAPIView"></a>GenericAPIView</h1><p><code>GenericAPIView</code> 类继承于<code>APIView</code>类，添加了常见行为<br>内置的每一个通用试图都是通过将<code>GenericAPIView</code> 类和一个或多个 minxin 类相互结合来构建的</p>
+<h2 id="基本设置"><a href="#基本设置" class="headerlink" title="基本设置"></a>基本设置</h2><p>如上所述，我们需要在视图类中添加属性控制视图的行为：</p>
+<ul>
+<li><code>queryset</code>，从此视图返回对象的查询集。通常必须设置此属性，或者通过调用 <code>get_queryset()</code> 方法覆盖</li>
+<li><code>serializer_class</code>，用于验证和反序列化输入以及序列化输出的序列化类。通常必须设置，或者调用<code>get_serializer_class()</code>方法覆盖</li>
+<li><code>lookup_field</code>，用于执行各个模型实例的对象查找的模型字段。默认为<code>&#39;pk&#39;</code></li>
+<li><code>lookup_url_kwarg</code>，用于对象查找的 URL 关键字参数。URL conf 应该包含与此值相对应的关键字参数。如果未设置，则默认使用与<code>lookup_field</code>相同的值</li>
+</ul>
+<h2 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h2><p><code>pagination_class</code> 对列表进行分页时使用的分页类。默认值与<code>DEFAULT_PAGINATION_CLASS</code>设置相同，设置<code>pagination_class = None</code>将禁用此视图的分页</p>
+<h2 id="过滤"><a href="#过滤" class="headerlink" title="过滤"></a>过滤</h2><p><code>filter_backends</code> 用于过滤查询集的过滤器类的列表。默认值与<code>DEFAULT_FILTER_CLASS</code>设置相同</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p><code>get_queryset(self)</code><br>返回列表视图的查询集，并应该将其用作查看详细视图的基础。默认返回由 <code>queryset</code> 属性指定的查询集<br>应该始终使用此方法， 而不是直接访问 <code>self.queryset</code>，因为 REST 会在内部对 <code>self.queryset</code> 的结果进行缓存用于后续所有请求</p>
+<p><code>get_object(self)</code><br>返回详细视图的对象实例。默认使用<code>lookup_field</code>参数来过滤基本查询集</p>
+<p>可以覆盖重写以提供更复杂的行为，例如基于多个 URL kwarg 的对象查找，如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_object</span><span class="params">(self)</span>:</span></span><br><span class="line">    queryset=self.get_queryset()</span><br><span class="line">    filter=&#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> field <span class="keyword">in</span> self.multiple_lookup_fields:</span><br><span class="line">        filter[field]=self.kwargs[field]</span><br><span class="line"></span><br><span class="line">    obj=get_object_or_404(queryset,**filter)</span><br><span class="line">    self.check_object_permissions(self.request,obj)</span><br><span class="line">    <span class="keyword">return</span> obj</span><br></pre></td></tr></table></figure>
+
+<p><code>filter_queryset(self,queryset)</code><br>给定一个查询集，使用过滤器进行过滤，返回一个新的查询集，如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">filter_queryset</span><span class="params">(self,queryset)</span>:</span></span><br><span class="line">    filter_backends=(CategoryFilter,)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="string">'geo_route'</span> <span class="keyword">in</span> self.request.query_params:</span><br><span class="line">        filter_backends=(GeoRouteFilter,CategoryFilter)</span><br><span class="line">    <span class="keyword">elif</span> <span class="string">'geo_point'</span> <span class="keyword">in</span> self.request.query_params:</span><br><span class="line">        filter_backends=(GeoPointFilter,CategoryFilter)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> backend <span class="keyword">in</span> list(filter_backends):</span><br><span class="line">        queryset=backend.filter_queryset(self.request,queryset,view=self)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> queryset</span><br></pre></td></tr></table></figure>
+
+<p><code>get_serializer_class(self)</code><br>返回用以序列化的类，默认返回<code>serializer_class</code>属性</p>
+<p>可以覆盖重写以提供动态行为，例如使用不同的序列化器进行读写操作，或为不同类型的用户提供不同的序列化器</p>
+<p>例子：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_serializer_class</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> self.request.user.is_staff:</span><br><span class="line">        <span class="keyword">return</span> FullAccountSerializer</span><br><span class="line">    <span class="keyword">return</span> BasicAccountSerializer</span><br></pre></td></tr></table></figure>
+
+<h3 id="保存和删除钩子"><a href="#保存和删除钩子" class="headerlink" title="保存和删除钩子"></a>保存和删除钩子</h3><p>以下方法由 mixin 类提供，可以很轻松地重写对象的保存和删除行为</p>
+<ul>
+<li><code>perform_create(self,serializer)</code>，保存新对象实例时由<code>CreateModelMixin</code>调用</li>
+<li><code>perform_update(self,serializer)</code>，保存现有对象实例时由<code>UpdateModelMixin</code>调用</li>
+<li><code>perform_destroy(self,serializer)</code>，删除对象实例时由<code>DestroyModelMixin</code>调用</li>
+</ul>
+<p>这些钩子对设置请求中隐含的但不属于请求数据的属性特别有用。例如，可以根据请求用户或基于 URL 关键字参数在对象上设置属性</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">perform_create</span><span class="params">(self,serializer)</span>:</span></span><br><span class="line">    serializer.save(user=self.request.user)</span><br></pre></td></tr></table></figure>
+
+<p>这些钩子的覆盖对于添加保存对象之前或之后发生的行为（如发送确认电子邮件或记录更新）也特别有用</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">perform_create</span><span class="params">(self,serializer)</span>:</span></span><br><span class="line">    queryset=SignRequest.object.filter(user=self.request.user):</span><br><span class="line">    <span class="keyword">if</span> queryset.exists():</span><br><span class="line">        <span class="keyword">raise</span> ValidationError(<span class="string">'You have already signed up'</span>)</span><br><span class="line">    serializer.save(user=self.request.user)</span><br></pre></td></tr></table></figure>
+
+<h1 id="Mixins"><a href="#Mixins" class="headerlink" title="Mixins"></a>Mixins</h1><p>mixins 类用于提供基本视图行为的操作。<code>mixin</code>类提供操作方法，而不是直接定义处理方法，通过<code>rest_framework.mixins</code>导入</p>
+<h2 id="ListModelMixin"><a href="#ListModelMixin" class="headerlink" title="ListModelMixin"></a>ListModelMixin</h2><p>提供一个<code>.list(request,*args,**kwargs)</code>方法，实现列出一个查询集</p>
+<p>如果查询集已填充，则返回<code>200 OK</code>响应，并将 queryset 的序列化表示形式作为响应的主体</p>
+<h2 id="CreateModelMixin"><a href="#CreateModelMixin" class="headerlink" title="CreateModelMixin"></a>CreateModelMixin</h2><p>提供<code>.create(request,*arg,**kwargs)</code>方法，实现创建和保存新模型数据实例</p>
+<p>如果创建了一个对象，则会返回一个<code>201 Created</code>响应，并将该对象的序列化表示形式作为响应的主体<br>如果为创建对象提供的请求数据无效，则将返回<code>400 Bad Request</code>响应，并将错误细节作为响应的主体</p>
+<h2 id="RetrieveModelMixin"><a href="#RetrieveModelMixin" class="headerlink" title="RetrieveModelMixin"></a>RetrieveModelMixin</h2><p>提供<code>.retrieve(request,*args,**kwargs)</code>方法，该方法实现在响应中返回现有的模型实例</p>
+<p>如果可以获取对象，则返回<code>200 OK</code>响应，并将对象的序列化表示为响应的主体。否则，将返回一个<code>404 Not Found</code></p>
+<h2 id="UpdateModelMixin"><a href="#UpdateModelMixin" class="headerlink" title="UpdateModelMixin"></a>UpdateModelMixin</h2><p>提供<code>.update(request,*args,**kwargs)</code>方法，实现更新和保存现有模型实例。还提供了一个 <code>.partial_update(request, *args, **kwargs)</code> 方法，它与更新方法类似，只是更新的所有字段都是可选的。这允许支持 <code>HTTP PATCH</code> 请求。</p>
+<p>如果成功更新对象，则返回 <code>200 OK 响应</code>，并将对象的序列化表示形式作为响应的主体<br>如果提供的用于更新对象的请求数据无效，则将返回 400 Bad Request 响应，并将错误细节作为响应的主体</p>
+<h2 id="DestroyModelMixin"><a href="#DestroyModelMixin" class="headerlink" title="DestroyModelMixin"></a>DestroyModelMixin</h2><p>提供一个 <code>.destroy(request, *args, **kwargs)</code> 方法，实现现有模型实例的删除</p>
+<p>如果一个对象被删除，则返回一个 <code>204 No Content</code> ，否则它将返回一个 <code>404 Not Found</code></p>
+<h1 id="内置视图类"><a href="#内置视图类" class="headerlink" title="内置视图类"></a>内置视图类</h1><p>以下类是具体的通用试图，从<code>rest_framework.generics</code>导入</p>
+<h2 id="CreateAPIView"><a href="#CreateAPIView" class="headerlink" title="CreateAPIView"></a>CreateAPIView</h2><p>仅用于创建实例，提供一个<code>post</code>请求的处理方法<br>继承自：<code>GenericAPIView</code>，<code>CreateModelMixin</code></p>
+<h2 id="ListAPIView"><a href="#ListAPIView" class="headerlink" title="ListAPIView"></a>ListAPIView</h2><p>仅用于读取模型实例列表，提供一个<code>get</code>请求的处理方法<br>继承自：<code>GenericAPIView</code>，<code>ListModelMixin</code></p>
+<h2 id="RetrieveAPIView"><a href="#RetrieveAPIView" class="headerlink" title="RetrieveAPIView"></a>RetrieveAPIView</h2><p>仅用于查询单个模型实例，提供一个<code>get</code>请求的处理方法<br>继承自：<code>GenericAPIView</code>，<code>RetrieveModelMixin</code></p>
+<h2 id="DestroyAPIView"><a href="#DestroyAPIView" class="headerlink" title="DestroyAPIView"></a>DestroyAPIView</h2><p>仅用于删除单个模型实例，提供一个<code>delete</code>请求的处理方法<br>继承其：<code>GenericAPIView</code>， <code>DestroyModelMixin</code></p>
+<h2 id="UpdateAPIView"><a href="#UpdateAPIView" class="headerlink" title="UpdateAPIView"></a>UpdateAPIView</h2><p>仅用于更新单个模型实例，提供 <code>put</code> 和 <code>patch</code> 请求的处理方法<br>继承自： <code>GenericAPIView</code>， <code>UpdateModelMixin</code></p>
+<h2 id="ListCreateAPIView"><a href="#ListCreateAPIView" class="headerlink" title="ListCreateAPIView"></a>ListCreateAPIView</h2><p>既可以获取也可以实例集合，也可以创建实例列表，提供 <code>get</code> 和 <code>post</code> 请求的处理方法<br>继承自： <code>GenericAPIView</code>, <code>ListModelMixin</code>，<code>CreateModelMixin</code></p>
+<h2 id="RetrieveUpdateAPIView"><a href="#RetrieveUpdateAPIView" class="headerlink" title="RetrieveUpdateAPIView"></a>RetrieveUpdateAPIView</h2><p>既可以查询也可以更新单个实例,提供 <code>get</code>，<code>put</code> 和 <code>patch</code> 请求的处理方法<br>继承自： <code>GenericAPIView</code>, <code>RetrieveModelMixin</code>，<code>UpdateModelMixin</code></p>
+<h2 id="RetrieveDestroyAPIView"><a href="#RetrieveDestroyAPIView" class="headerlink" title="RetrieveDestroyAPIView"></a>RetrieveDestroyAPIView</h2><p>既可以查询也可以删除单个实例,提供 <code>get</code> 和 <code>delete</code> 请求的处理方法<br>继承自： <code>GenericAPIView</code>, <code>RetrieveModelMixin</code>，<code>DestroyModelMixin</code></p>
+<h2 id="RetrieveUpdateDestroyAPIView"><a href="#RetrieveUpdateDestroyAPIView" class="headerlink" title="RetrieveUpdateDestroyAPIView"></a>RetrieveUpdateDestroyAPIView</h2><p>同时支持查询，更新，删除,提供 <code>get</code>，<code>put</code>，<code>patch</code> 和 <code>delete</code> 请求的处理方法<br>继承自： <code>GenericAPIView</code>, <code>RetrieveModelMixin</code>，<code>UpdateModelMixin</code>，<code>DestroyModelMixin</code></p>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:;" class="page-reward-btn tooltip-top">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>感谢您打赏帅气的农民<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/social/alipay.JPG">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/social/wechatpay.JPG">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -464,7 +381,7 @@
 		</ul>
 	</div>
 
-          
+    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -477,22 +394,120 @@
 	</div>
 
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+  <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+  <p>扫一扫，分享到微信</p>
+  <div class="wx-qrcode">
+    <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/03/Django-Restful-Framework-%E5%B8%B8%E7%94%A8%E8%A7%86%E5%9B%BE/" alt="微信分享二维码">
+  </div>
+</div>
+
+<div class="mask js-mask"></div>
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-    
-    
-  </div>
-</section>
 
 
-
-<nav id="page-nav">
-  <a class="extend prev" rel="prev" href="/tags/%E5%90%8E%E7%AB%AF/"> Prev</a><a class="page-number" href="/tags/%E5%90%8E%E7%AB%AF/">1</a><span class="page-number current">2</span>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/05/31/Django-Restful-Framework-%E8%A7%86%E5%9B%BE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Django-Restful-Framework-视图</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
 </nav>
 
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="gitment-ctn"></div>
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  var gitment = new Gitment({
+    id: "http://yoursite.com/2020/06/03/Django-Restful-Framework-%E5%B8%B8%E7%94%A8%E8%A7%86%E5%9B%BE/",
+    //id: 'Wed Jun 03 2020 23:10:48 GMT+0800',
+    owner: 'li-car-fei',
+    repo: 'li-car-fei.github.io',
+    oauth: {
+      client_id: 'c455113c0bdc87f92fd0',
+      client_secret: 'a88bd5b381138f689b6157e17e03aad11d4cd4e1',
+    },
+  })
+  gitment.render('gitment-ctn')
+</script>
 
 
           </div>
@@ -521,9 +536,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 			isArchive: false,
-				isTag: true,
+				isTag: false,
 					isCategory: false,
 						open_in_new: true,
 							toc_hide_index: true,
