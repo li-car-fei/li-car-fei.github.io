@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: javascript | 藤原拓鞋</title>
+  <title>javascript 基础（一） | 藤原拓鞋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="藤原拓鞋">
-<meta property="og:url" content="http://yoursite.com/tags/javascript/index.html">
+  <meta name="description" content="javascript 基础内容第一部分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript 基础（一）">
+<meta property="og:url" content="http://yoursite.com/2020/06/07/javascript-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
 <meta property="og:site_name" content="藤原拓鞋">
+<meta property="og:description" content="javascript 基础内容第一部分">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-07T14:19:32.000Z">
+<meta property="article:modified_time" content="2020-06-07T14:20:35.659Z">
 <meta property="article:author" content="藤原拓鞋">
+<meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="藤原拓鞋" type="application/atom+xml">
@@ -196,36 +201,105 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-
-
-
-
-
-
-<section class="archives-wrap">
-  <div class="archive-year-wrap">
-    <a href="/archives/2020" class="archive-year">2020</a>
-  </div>
-  <div class="archives">
+            <article id="post-javascript-基础（一）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/07/javascript-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
+      <header class=" article-header">
+  
+  
+    <h1 class="article-title" itemprop="name">
+      javascript 基础（一）
+    </h1>
+  
+
+  <!--显示阅读次数-->
+  
+  <br />
+  <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+    <span class="icon-sort"></span>
+    <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+      阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+    </span>
+  </a>
+  
+  
+  <a href="/2020/06/07/javascript-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
   	<time datetime="2020-06-07T14:19:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-07</time>
 </a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/07/javascript-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/">javascript 基础（一）</a>
-    </h1>
+  <!-- 这里开始添加以下内容 -->
   
+  <div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <span class="post-meta-item-text"> 字数统计: </span>
+            <span class="post-count">1.6k字</span>
+        </span>
+    </span>
 
-        <div class="article-info info-on-right">
-          
+    <span class="post-time">
+        |
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <span class="post-meta-item-text"> 阅读时长: </span>
+            <span class="post-count">6分</span>
+        </span>
+    </span>
+</div>
+  
+  <!-- 到这里结束 -->
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+
+    
+    <p>javascript 基础内容第一部分</p>
+<a id="more"></a>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * JS原始数据类型：</span></span><br><span class="line"><span class="comment"> * boolean null undefined number string symbol bigint</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 引用数据类型：</span></span><br><span class="line"><span class="comment"> * 对象：包含普通对象Object，数组对象Array，正则对象RegExp，日期对象Date，数学函数Math，函数对象Function</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">person</span>) </span>&#123;</span><br><span class="line">  person.age = <span class="number">26</span>;</span><br><span class="line">  person = &#123;</span><br><span class="line">    name: <span class="string">"mybj"</span>,</span><br><span class="line">    age: <span class="number">18</span>,</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> person;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> p1 = &#123;</span><br><span class="line">  name: <span class="string">"gwei"</span>,</span><br><span class="line">  age: <span class="number">19</span>,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> p2 = test(p1);</span><br><span class="line"><span class="built_in">console</span>.log(p1);</span><br><span class="line"><span class="built_in">console</span>.log(p2);</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 运行结果：</span></span><br><span class="line"><span class="comment"> * p1：&#123;name: “gwei”, age: 26&#125;</span></span><br><span class="line"><span class="comment"> * p2：&#123;name: “mybj”, age: 18&#125;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 原因: 在函数传参的时候传递的是对象在堆中的内存地址值，test函数中的实参person是p1对象的内存地址，</span></span><br><span class="line"><span class="comment"> * 通过调用person.age = 26确实改变了p1的值，但随后person变成了另一块内存空间的地址，</span></span><br><span class="line"><span class="comment"> * 并且在最后将这另外一份内存空间的地址返回，赋给了p2。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// typeof 检测</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="number">1</span>; <span class="comment">//'number'</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="string">"1"</span>; <span class="comment">//'string'</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">true</span>; <span class="comment">//'boolean'</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span>; <span class="comment">//'undefined'</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="built_in">Symbol</span>(); <span class="comment">//'symbol'</span></span><br><span class="line"><span class="keyword">typeof</span> []; <span class="comment">//'object'</span></span><br><span class="line"><span class="keyword">typeof</span> &#123;&#125;; <span class="comment">//'object'</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="built_in">console</span>.log; <span class="comment">//'object'</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span>; <span class="comment">//'object'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// instanceof的原理是基于原型链的查询，只要处于原型链中，判断永远为true</span></span><br><span class="line"><span class="keyword">const</span> Person = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line"><span class="keyword">const</span> p1 = <span class="keyword">new</span> Person();</span><br><span class="line">p1 <span class="keyword">instanceof</span> Person; <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> str1 = <span class="string">"hello world"</span>;</span><br><span class="line">str1 <span class="keyword">instanceof</span> <span class="built_in">String</span>; <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> str2 = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">"hello world"</span>);</span><br><span class="line">str2 <span class="keyword">instanceof</span> <span class="built_in">String</span>; <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 手动实现instanceof的功能         核心：原型链向上查找</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myInstanceof</span>(<span class="params">son, dad</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 基本类型直接返回false</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> son !== <span class="string">"object"</span> || son === <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// getPrototype是Object对象自带的一个方法，能够拿到参数的原型对象</span></span><br><span class="line">  <span class="keyword">let</span> proto = <span class="built_in">Object</span>.getPrototypeOf(son);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="comment">//查到尽头，还没找到</span></span><br><span class="line">    <span class="keyword">if</span> (proto == <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="comment">//找到相同的原型对象</span></span><br><span class="line">    <span class="keyword">if</span> (proto == dad.prototype) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    proto = <span class="built_in">Object</span>.getPrototypeOf(proto);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * == 和 === 的区别</span></span><br><span class="line"><span class="comment"> * ===叫做严格相等，是指：左右两边不仅值要相等，类型也要相等，例如’1’===1的结果是false，因为一边是string，另一边是number</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * == 一般情况下，只要值相等，就返回true，在比较前进行类型转换，步骤如下：</span></span><br><span class="line"><span class="comment"> * 1.两边的类型是否相同，相同的话就比较值的大小，例如1==2，返回false</span></span><br><span class="line"><span class="comment"> * 2.判断的是否是null和undefined，是的话就返回true</span></span><br><span class="line"><span class="comment"> * 3.判断的类型是否是String和Number，是的话，把String类型转换成Number，再进行比较</span></span><br><span class="line"><span class="comment"> * 4.判断其中一方是否是Boolean，是的话就把Boolean转换成Number，再进行比较</span></span><br><span class="line"><span class="comment"> * 5.如果其中一方为Object，且另一方为String、Number或者Symbol，会将Object转换成字符串，再进行比较</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(&#123; <span class="attr">a</span>: <span class="number">1</span> &#125; == <span class="literal">true</span>); <span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(&#123; <span class="attr">a</span>: <span class="number">1</span> &#125; == <span class="string">"[object Object]"</span>); <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 对象转原始类型流程：</span></span><br><span class="line"><span class="comment"> * 1.如果有Symbol.toPrimitive()方法，优先调用再返回</span></span><br><span class="line"><span class="comment"> * 2.调用valueOf()，如果转换为原始类型，则返回</span></span><br><span class="line"><span class="comment"> * 3.调用toString()，如果转换为原始类型，则返回</span></span><br><span class="line"><span class="comment"> * 4.如果都没有返回原始类型，会报错</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使得 if(a == 1 &amp;&amp; a == 2) 条件成立</span></span><br><span class="line">a = &#123;</span><br><span class="line">  value: <span class="number">0</span>,</span><br><span class="line">  valueof: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.value++;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.value;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(a == <span class="number">1</span> &amp;&amp; a == <span class="number">2</span>); <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 闭包</span></span><br><span class="line"><span class="comment"> * 闭包是指那些能够访问自由变量的函数，其中自由变量，指在函数中使用的，但既不是函数参数arguments也不是函数的局部变量的变量，其实就是另外一个函数作用域中的变量</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 首先要明白作用域链的概念，其实很简单，在ES5中只存在两种作用域————全局作用域和函数作用域，</span></span><br><span class="line"><span class="comment"> * 当访问一个变量时，解释器会首先在当前作用域查找标示符，如果没有找到，就去父作用域找，</span></span><br><span class="line"><span class="comment"> * 直到找到该变量的标示符或者不在父作用域中，这就是作用域链，值得注意的是，每一个子函数都会拷贝上级的作用域，形成一个作用域的链条</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 闭包产生的本质就是，当前环境中存在指向父级作用域的引用</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a); <span class="comment">//2</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> f2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> x = f1();</span><br><span class="line">x();</span><br><span class="line"><span class="comment">//这里x会拿到父级作用域中的变量，输出2。因为在当前环境中，含有对f2的引用，f2恰恰引用了window、f1和f2的作用域。因此f2可以访问到f1的作用域的变量。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> f3;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">  f3 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line">f1();</span><br><span class="line">f3();</span><br><span class="line"><span class="comment">//让f1执行，给f3赋值后，等于说现在f3拥有了window、f1和f3本身这几个作用域的访问权限，还是自底向上查找，最近是在f1中找到了a,因此输出2。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 原型链</span></span><br><span class="line"><span class="comment"> * 在JavaScript中，每当定义一个函数数据类型(普通函数、类)时候，都会天生自带一个prototype属性，这个属性指向函数的原型对象</span></span><br><span class="line"><span class="comment"> * 当函数经过new调用时，这个函数就成为了构造函数，返回一个全新的实例对象，这个实例对象有一个__proto__属性，指向构造函数的原型对象</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * JavaScript对象通过prototype指向父类对象，直到指向Object对象为止，这样就形成了一个原型指向的链条, 即原型链</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 对象的hasOwnProperty()来检查对象自身中是否含有该属性</span></span><br><span class="line"><span class="comment"> * 使用in检查对象中是否含有某个属性时，如果对象中没有但是原型链中有，也会返回true</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ES5实现继承（最佳方式）</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = <span class="string">"parent"</span>;</span><br><span class="line">  <span class="keyword">this</span>.arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="string">"3"</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  Parent.call(<span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">this</span>.age = <span class="number">18</span>;</span><br><span class="line">  <span class="keyword">this</span>.type = <span class="string">"child"</span>;</span><br><span class="line">&#125;</span><br><span class="line">Child.prototype = <span class="built_in">Object</span>.create(Parent.prototype);</span><br><span class="line">Child.prototype.constructor = Child;</span><br><span class="line"><span class="comment">// ES6的 class extends 编译成ES5后也是这个方法</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * arguments</span></span><br><span class="line"><span class="comment"> * 因为arguments本身并不能调用数组方法，它是一个另外一种对象类型，只不过属性从0开始排，</span></span><br><span class="line"><span class="comment"> * 依次为0，1，2…最后还有callee和length属性。我们也把这样的对象称为类数组。</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 常见的类数组还有：</span></span><br><span class="line"><span class="comment"> * 1.用getElementsByTagName/ClassName()获得的HTMLCollection</span></span><br><span class="line"><span class="comment"> * 2.用querySelector获得的nodeList</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 常用将arguments转成数组的方法：</span></span><br><span class="line"><span class="comment"> * 1.Array.prototype.slice.call()</span></span><br><span class="line"><span class="comment"> * 2.Array.from()</span></span><br><span class="line"><span class="comment"> * 3.ES6展开运算符  [...arguments]</span></span><br><span class="line"><span class="comment"> * 4.Array.prototype.concat.apply([],arguments)     手写bind时可用，将两个arguments合并</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * JS判断数组中是否包含某个值</span></span><br><span class="line"><span class="comment"> * 1.array.indexOf()!==-1</span></span><br><span class="line"><span class="comment"> * 2.array.includes()   // true or false</span></span><br><span class="line"><span class="comment"> * 3.array.find(item=&gt;&#123;&#125;)   //返回第一个满足条件的元素的值</span></span><br><span class="line"><span class="comment"> * 4.array.findIndex(item=&gt;&#123;&#125;)   //返回第一个满足条件的元素的下标，如果没找到则返回-1</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 递归实现flat数组扁平化</span></span><br><span class="line"><span class="keyword">let</span> result = [];</span><br><span class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span> (<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">    <span class="keyword">let</span> item = arr[i];</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Array</span>.isArray(item)) &#123;</span><br><span class="line">      fn(item);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      result.push(item);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:;" class="page-reward-btn tooltip-top">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>感谢您打赏帅气的农民<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/social/alipay.JPG">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/social/wechatpay.JPG">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -237,7 +311,7 @@
 		</ul>
 	</div>
 
-          
+    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -250,165 +324,120 @@
 	</div>
 
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+  <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+  <p>扫一扫，分享到微信</p>
+  <div class="wx-qrcode">
+    <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/07/javascript-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/" alt="微信分享二维码">
+  </div>
+</div>
+
+<div class="mask js-mask"></div>
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-    
 
 
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/06/javascript-%E6%B7%B1%E5%BA%A6%E5%85%8B%E9%9A%86%E4%B8%8E%E9%98%B2%E6%8A%96%E8%8A%82%E6%B5%81/" class="archive-article-date">
-  	<time datetime="2020-06-06T12:06:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-06</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/06/javascript-%E6%B7%B1%E5%BA%A6%E5%85%8B%E9%9A%86%E4%B8%8E%E9%98%B2%E6%8A%96%E8%8A%82%E6%B5%81/">javascript 深度克隆与防抖节流</a>
-    </h1>
   
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-    
-
-
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/06/%E6%89%8B%E5%86%99-call%E7%AD%89/" class="archive-article-date">
-  	<time datetime="2020-06-06T12:05:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-06</time>
-</a>
-        </div>
-    	 
+    <a href="/2020/06/06/javascript-%E6%B7%B1%E5%BA%A6%E5%85%8B%E9%9A%86%E4%B8%8E%E9%98%B2%E6%8A%96%E8%8A%82%E6%B5%81/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">javascript 深度克隆与防抖节流</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/06/%E6%89%8B%E5%86%99-call%E7%AD%89/">手写 call等</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
+</nav>
 
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-    
-
-
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/06/%E6%89%8B%E5%86%99-async-await/" class="archive-article-date">
-  	<time datetime="2020-06-06T12:02:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/06/%E6%89%8B%E5%86%99-async-await/">手写 async await</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-    
-    
-  </div>
-</section>
+        
+        
+    </div>
+</aside>
 
 
 
+
+
+
+
+
+
+
+
+
+<div id="gitment-ctn"></div>
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  var gitment = new Gitment({
+    id: "http://yoursite.com/2020/06/07/javascript-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/",
+    //id: 'Sun Jun 07 2020 22:19:32 GMT+0800',
+    owner: 'li-car-fei',
+    repo: 'li-car-fei.github.io',
+    oauth: {
+      client_id: 'c455113c0bdc87f92fd0',
+      client_secret: 'a88bd5b381138f689b6157e17e03aad11d4cd4e1',
+    },
+  })
+  gitment.render('gitment-ctn')
+</script>
 
 
           </div>
@@ -437,9 +466,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 			isArchive: false,
-				isTag: true,
+				isTag: false,
 					isCategory: false,
 						open_in_new: true,
 							toc_hide_index: true,
