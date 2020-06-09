@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020/6 | 藤原拓鞋</title>
+  <title>javascript 基础（二） | 藤原拓鞋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="藤原拓鞋">
-<meta property="og:url" content="http://yoursite.com/archives/2020/06/index.html">
+  <meta name="description" content="javascript 基础内容第二部分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript 基础（二）">
+<meta property="og:url" content="http://yoursite.com/2020/06/09/javascript-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/index.html">
 <meta property="og:site_name" content="藤原拓鞋">
+<meta property="og:description" content="javascript 基础内容第二部分">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-09T14:56:34.000Z">
+<meta property="article:modified_time" content="2020-06-09T14:57:38.994Z">
 <meta property="article:author" content="藤原拓鞋">
+<meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="藤原拓鞋" type="application/atom+xml">
@@ -196,36 +201,105 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-
-
-
-
-
-
-<section class="archives-wrap">
-  <div class="archive-year-wrap">
-    <a href="/archives/2020" class="archive-year">2020</a>
-  </div>
-  <div class="archives">
+            <article id="post-javascript-基础（二）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/09/javascript-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/" class="archive-article-date">
+      <header class=" article-header">
+  
+  
+    <h1 class="article-title" itemprop="name">
+      javascript 基础（二）
+    </h1>
+  
+
+  <!--显示阅读次数-->
+  
+  <br />
+  <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+    <span class="icon-sort"></span>
+    <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+      阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+    </span>
+  </a>
+  
+  
+  <a href="/2020/06/09/javascript-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/" class="archive-article-date">
   	<time datetime="2020-06-09T14:56:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-09</time>
 </a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/09/javascript-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/">javascript 基础（二）</a>
-    </h1>
+  <!-- 这里开始添加以下内容 -->
   
+  <div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <span class="post-meta-item-text"> 字数统计: </span>
+            <span class="post-count">1.1k字</span>
+        </span>
+    </span>
 
-        <div class="article-info info-on-right">
-          
+    <span class="post-time">
+        |
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <span class="post-meta-item-text"> 阅读时长: </span>
+            <span class="post-count">5分</span>
+        </span>
+    </span>
+</div>
+  
+  <!-- 到这里结束 -->
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+
+    
+    <p>javascript 基础内容第二部分</p>
+<a id="more"></a>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 高阶函数：</span></span><br><span class="line"><span class="comment"> * 一个函数就可以接收另一个函数作为参数或者返回值为一个函数，这种函数就称为高阶函数</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 数组原型对象中的高阶函数:</span></span><br><span class="line"><span class="comment"> * map：传入一个回调函数，一个回调函数的this值(可选)，回调函数被默认传入三个值，依次为当前元素、当前索引、整个数组</span></span><br><span class="line"><span class="comment"> *      创建一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果，对原来的数组没有影响</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * reduce：传入一个回调函数，一个初始值，回调函数中三个默认参数，依次为积累值、当前值、整个数组</span></span><br><span class="line"><span class="comment"> *         不传默认值会自动以第一个元素为初始值，然后从第二个元素开始依次累计</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * filter：传入一个函数参数，这个函数接受一个默认参数，就是当前元素。这个作为参数的函数返回值为一个布尔类型，决定元素是否保留</span></span><br><span class="line"><span class="comment"> *         返回值为一个新的数组，这个数组里面包含参数里面所有被保留的项</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * sort：传入一个用于比较的函数，函数有两个默认参数，分别代表比较的两个元素</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> nums = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">let</span> obj = &#123; <span class="attr">val</span>: <span class="number">5</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// map</span></span><br><span class="line"><span class="keyword">let</span> newNums = nums.map(<span class="function">(<span class="params">item, index, array</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> item + <span class="keyword">this</span>.val;</span><br><span class="line">&#125;, obj);</span><br><span class="line"></span><br><span class="line"><span class="comment">// reduce</span></span><br><span class="line"><span class="keyword">let</span> newNums = nums.reduce(<span class="function">(<span class="params">sum, item, array</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> (sum += item);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// filter</span></span><br><span class="line"><span class="keyword">let</span> oddNums = nums.filter(<span class="function">(<span class="params">item</span>) =&gt;</span> item % <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 当比较函数返回值大于0，则 a 在 b 的后面，即a的下标应该比b大</span></span><br><span class="line"><span class="comment">// 反之，则 a 在 b 的后面，即 a 的下标比 b 小</span></span><br><span class="line">nums.sort(<span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (a &gt; b) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span> (a &lt; b) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span> (a == b) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 自已实现map</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.map = <span class="function"><span class="keyword">function</span> (<span class="params">callback, thisArg</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 处理调用的类型异常</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">this</span> === <span class="literal">null</span> || <span class="keyword">this</span> === <span class="literal">undefined</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">"Cannot read property 'map' of null or undefined"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 处理回调函数异常</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">Object</span>.prototype.toString.call(callback) !== <span class="string">"[Object Function"</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(callbackfn + <span class="string">" is not a function"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 先将调用的数组转为对象</span></span><br><span class="line">  <span class="keyword">let</span> O = <span class="built_in">Object</span>(<span class="keyword">this</span>);</span><br><span class="line">  <span class="comment">// 获取回调函数的this值</span></span><br><span class="line">  <span class="keyword">let</span> T = thisArg;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> len = O.length &gt;&gt;&gt; <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">let</span> A = <span class="keyword">new</span> <span class="built_in">Array</span>(len);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> k = <span class="number">0</span>; k &lt; len; k++) &#123;</span><br><span class="line">    <span class="comment">// 到原型链上去找键</span></span><br><span class="line">    <span class="keyword">if</span> (k <span class="keyword">in</span> O) &#123;</span><br><span class="line">      <span class="keyword">let</span> kValue = O[k];</span><br><span class="line">      <span class="comment">// 依次传入this，当前项，当前索引，整个数组</span></span><br><span class="line">      <span class="keyword">let</span> mappedValue = callback.call(T, kValue, k, O);</span><br><span class="line">      A[k] = mappedValue;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> A;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 自已实现 reduce</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.reduce = <span class="function"><span class="keyword">function</span> (<span class="params">callback, initialValue</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 处理调用的类型异常</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">this</span> === <span class="literal">null</span> || <span class="keyword">this</span> === <span class="literal">undefined</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">"Cannot read property 'reduce' of null or undefined"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 处理回调函数异常</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">Object</span>.prototype.toString.call(callback) != <span class="string">"[Object Function]"</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(callbackfn + <span class="string">" is not a function"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 先将调用的数组转为对象</span></span><br><span class="line">  <span class="keyword">let</span> O = <span class="built_in">Object</span>(<span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">let</span> len = O.length &gt;&gt;&gt; <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">let</span> k = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">let</span> accumulator = initialValue;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 无初始值</span></span><br><span class="line">  <span class="keyword">if</span> (accumulator === <span class="literal">undefined</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (; k &lt; len; k++) &#123;</span><br><span class="line">      <span class="comment">// 查找原型链</span></span><br><span class="line">      <span class="keyword">if</span> (k <span class="keyword">in</span> O) &#123;</span><br><span class="line">        accumulator = O[k];</span><br><span class="line">        k++;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 数组全空且没有初始值</span></span><br><span class="line">  <span class="keyword">if</span> (k === len &amp;&amp; accumulator === <span class="literal">undefined</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"Each element of the array is empty"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 遍历调用回调函数</span></span><br><span class="line">  <span class="keyword">for</span> (; k &lt; len; k++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (k <span class="keyword">in</span> O) &#123;</span><br><span class="line">      accumulator = callback.call(<span class="literal">undefined</span>, accumulator, O[k], k, O);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 返回accumulator</span></span><br><span class="line">  <span class="keyword">return</span> accumulator;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 实现push与pop</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// push</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.push = <span class="function"><span class="keyword">function</span> (<span class="params">...items</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> O = <span class="built_in">Object</span>(<span class="keyword">this</span>);</span><br><span class="line">  <span class="comment">// 原数组长度</span></span><br><span class="line">  <span class="keyword">let</span> len = <span class="keyword">this</span>.length &gt;&gt;&gt; <span class="number">0</span>;</span><br><span class="line">  <span class="comment">// push的元素个数</span></span><br><span class="line">  <span class="keyword">let</span> argCount = items.length &gt;&gt;&gt; <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// for循环添加</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; argCount; i++) &#123;</span><br><span class="line">    O[len + i] = items[i];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// push完的长度</span></span><br><span class="line">  <span class="keyword">let</span> newLength = len + argCount;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 更改length属性</span></span><br><span class="line">  O.length = newLength;</span><br><span class="line">  <span class="comment">// 返回</span></span><br><span class="line">  <span class="keyword">return</span> newLength;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// pop</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.pop = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> O = <span class="built_in">Object</span>(<span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">let</span> len = <span class="keyword">this</span>.length &gt;&gt;&gt; <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (len === <span class="number">0</span>) &#123;</span><br><span class="line">    O.length = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  len--;</span><br><span class="line">  <span class="keyword">let</span> value = O[len];</span><br><span class="line">  <span class="keyword">delete</span> O[len]; <span class="comment">// 删除元素</span></span><br><span class="line">  O.length = len; <span class="comment">// 设置新的程度</span></span><br><span class="line">  <span class="keyword">return</span> value; <span class="comment">// 返回</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 自已实现filter</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.filter = <span class="function"><span class="keyword">function</span> (<span class="params">callback, thisArg</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 处理调用类型异常</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">this</span> === <span class="literal">null</span> || <span class="keyword">this</span> === <span class="literal">undefined</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">"Cannot read property 'filter' of null or undefined"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 处理回调类型异常</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">Object</span>.prototype.toString.call(callbackfn) != <span class="string">"[object Function]"</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(callbackfn + <span class="string">" is not a function"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> O = <span class="built_in">Object</span>(<span class="keyword">this</span>);</span><br><span class="line">  <span class="comment">// 原数组长度</span></span><br><span class="line">  <span class="keyword">let</span> len = O.length &gt;&gt;&gt; <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 返回数组长度</span></span><br><span class="line">  <span class="keyword">let</span> resLen = <span class="number">0</span>;</span><br><span class="line">  <span class="comment">// 返回数组</span></span><br><span class="line">  <span class="keyword">let</span> res = [];</span><br><span class="line"></span><br><span class="line">  <span class="comment">// for循环遍历调用回调</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i <span class="keyword">in</span> O) &#123;</span><br><span class="line">      <span class="comment">// 当前元素</span></span><br><span class="line">      <span class="keyword">let</span> element = O[i];</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 调用回调</span></span><br><span class="line">      <span class="keyword">if</span> (callback.call(thisArg, O[i], i, O)) &#123;</span><br><span class="line">        <span class="comment">// 若为真，添加到返回的数组</span></span><br><span class="line">        res[resLen++] = element;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:;" class="page-reward-btn tooltip-top">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>感谢您打赏帅气的农民<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/social/alipay.JPG">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/social/wechatpay.JPG">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -237,7 +311,7 @@
 		</ul>
 	</div>
 
-          
+    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -250,267 +324,120 @@
 	</div>
 
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+  <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+  <p>扫一扫，分享到微信</p>
+  <div class="wx-qrcode">
+    <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/09/javascript-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/" alt="微信分享二维码">
+  </div>
+</div>
+
+<div class="mask js-mask"></div>
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-    
 
 
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/07/javascript-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2020-06-07T14:19:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-07</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/07/javascript-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/">javascript 基础（一）</a>
-    </h1>
   
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-    
-
-
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/06/javascript-%E6%B7%B1%E5%BA%A6%E5%85%8B%E9%9A%86%E4%B8%8E%E9%98%B2%E6%8A%96%E8%8A%82%E6%B5%81/" class="archive-article-date">
-  	<time datetime="2020-06-06T12:06:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-06</time>
-</a>
-        </div>
-    	 
+    <a href="/2020/06/07/javascript-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">javascript 基础（一）</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/06/javascript-%E6%B7%B1%E5%BA%A6%E5%85%8B%E9%9A%86%E4%B8%8E%E9%98%B2%E6%8A%96%E8%8A%82%E6%B5%81/">javascript 深度克隆与防抖节流</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
+</nav>
 
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-    
-
-
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/06/%E6%89%8B%E5%86%99-call%E7%AD%89/" class="archive-article-date">
-  	<time datetime="2020-06-06T12:05:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/06/%E6%89%8B%E5%86%99-call%E7%AD%89/">手写 call等</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-    
-
-
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/06/%E6%89%8B%E5%86%99-async-await/" class="archive-article-date">
-  	<time datetime="2020-06-06T12:02:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/06/%E6%89%8B%E5%86%99-async-await/">手写 async await</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-    
-
-
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/03/Django-Restful-Framework-%E5%B8%B8%E7%94%A8%E8%A7%86%E5%9B%BE/" class="archive-article-date">
-  	<time datetime="2020-06-03T15:10:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/03/Django-Restful-Framework-%E5%B8%B8%E7%94%A8%E8%A7%86%E5%9B%BE/">Django-Restful-Framework-常用视图</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Django</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">后端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Django//" class="article-tag-list-link color2">Django</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-    
-    
-  </div>
-</section>
+        
+        
+    </div>
+</aside>
 
 
 
+
+
+
+
+
+
+
+
+
+<div id="gitment-ctn"></div>
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  var gitment = new Gitment({
+    id: "http://yoursite.com/2020/06/09/javascript-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/",
+    //id: 'Tue Jun 09 2020 22:56:34 GMT+0800',
+    owner: 'li-car-fei',
+    repo: 'li-car-fei.github.io',
+    oauth: {
+      client_id: 'c455113c0bdc87f92fd0',
+      client_secret: 'a88bd5b381138f689b6157e17e03aad11d4cd4e1',
+    },
+  })
+  gitment.render('gitment-ctn')
+</script>
 
 
           </div>
@@ -539,8 +466,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-			isArchive: true,
+		isPost: true,
+			isArchive: false,
 				isTag: false,
 					isCategory: false,
 						open_in_new: true,
