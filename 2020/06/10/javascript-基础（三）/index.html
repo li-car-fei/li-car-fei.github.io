@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: javascript | 藤原拓鞋</title>
+  <title>javascript 基础（三） | 藤原拓鞋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="藤原拓鞋">
-<meta property="og:url" content="http://yoursite.com/tags/javascript/index.html">
+  <meta name="description" content="javascript 基础内容第三部分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript 基础（三）">
+<meta property="og:url" content="http://yoursite.com/2020/06/10/javascript-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/index.html">
 <meta property="og:site_name" content="藤原拓鞋">
+<meta property="og:description" content="javascript 基础内容第三部分">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-10T11:38:02.000Z">
+<meta property="article:modified_time" content="2020-06-10T11:39:04.021Z">
 <meta property="article:author" content="藤原拓鞋">
+<meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="藤原拓鞋" type="application/atom+xml">
@@ -196,36 +201,105 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-
-
-
-
-
-
-<section class="archives-wrap">
-  <div class="archive-year-wrap">
-    <a href="/archives/2020" class="archive-year">2020</a>
-  </div>
-  <div class="archives">
+            <article id="post-javascript-基础（三）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/10/javascript-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/" class="archive-article-date">
+      <header class=" article-header">
+  
+  
+    <h1 class="article-title" itemprop="name">
+      javascript 基础（三）
+    </h1>
+  
+
+  <!--显示阅读次数-->
+  
+  <br />
+  <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+    <span class="icon-sort"></span>
+    <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+      阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+    </span>
+  </a>
+  
+  
+  <a href="/2020/06/10/javascript-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/" class="archive-article-date">
   	<time datetime="2020-06-10T11:38:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-10</time>
 </a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/10/javascript-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/">javascript 基础（三）</a>
-    </h1>
+  <!-- 这里开始添加以下内容 -->
   
+  <div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <span class="post-meta-item-text"> 字数统计: </span>
+            <span class="post-count">680字</span>
+        </span>
+    </span>
 
-        <div class="article-info info-on-right">
-          
+    <span class="post-time">
+        |
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <span class="post-meta-item-text"> 阅读时长: </span>
+            <span class="post-count">2分</span>
+        </span>
+    </span>
+</div>
+  
+  <!-- 到这里结束 -->
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+
+    
+    <p>javascript 基础内容第三部分</p>
+<a id="more"></a>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * JavaScript内存机制之数据储存</span></span><br><span class="line"><span class="comment"> * 基本数据类型用栈存储，引用数据类型用堆存储，闭包变量是存在于堆内存中的</span></span><br><span class="line"><span class="comment"> * boolean,null,undefined,string,number,bigint,symbol 存储在栈，对象数据类型存储在堆</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 对于系统栈，除了保存变量，还有创建并切换函数执行上下文的功能，如果对象数据类型也存储在栈，会使得函数执行缓慢</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * V8垃圾回收</span></span><br><span class="line"><span class="comment"> * 在node基础篇中总结过，跳转去看</span></span><br><span class="line"><span class="comment"> * 或者，看以下文章：https://www.mybj123.com/5304.html</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * V8执行JS代码的过程</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 1.生成AST抽象语法树，分为两步——词法分析和语法分析</span></span><br><span class="line"><span class="comment"> *   词法分析即分词，它的工作就是将一行行的代码分解成一个个token</span></span><br><span class="line"><span class="comment"> *   语法分析阶段，将生成的这些 token 数据，根据一定的语法规则转化为AST</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 2.生成AST之后，直接通过V8的解释器(也叫Ignition)来生成字节码</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 3.执行代码，在执行字节码的过程中，如果发现某一部分代码重复出现，那么V8将它记做热点代码(HotSpot)，</span></span><br><span class="line"><span class="comment"> *   然后将这么代码编译成机器码保存起来，这个用来编译的工具就是V8的编译器(也叫做TurboFan)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 在JS中，大部分任务都在主线程上执行：1.渲染事件 2.用户交互事件 3.js脚本执行 4.网络请求，文件读写完成事件等</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 任务队列按顺序执行队列中的任务，延迟队列执行诸如setTimeout/setInterval这样的定时器回调任务，这些都属于宏任务</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 微任务的引入：</span></span><br><span class="line"><span class="comment"> * 防止异步回调因为宏任务的阻塞而导致体验不佳，在每一个宏任务中定义一个微任务队列，</span></span><br><span class="line"><span class="comment"> * 当该宏任务执行完成，会检查其中的微任务队列，如果为空则直接执行下一个宏任务，</span></span><br><span class="line"><span class="comment"> * 如果不为空，则依次执行微任务，执行完成才去执行下一个宏任务</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"start"</span>);</span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"timeout"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">Promise</span>.resolve().then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"resolve"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"end"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/**结果：</span></span><br><span class="line"><span class="comment">        start</span></span><br><span class="line"><span class="comment">        end</span></span><br><span class="line"><span class="comment">        resolve</span></span><br><span class="line"><span class="comment">        timeout</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 刚开始整个脚本作为一个宏任务来执行，对于同步代码直接压入执行栈进行执行，因此先打印start和end</span></span><br><span class="line"><span class="comment"> * setTimeout 作为一个宏任务放入宏任务队列</span></span><br><span class="line"><span class="comment"> * Promise.then作为一个为微任务放入到微任务队列</span></span><br><span class="line"><span class="comment"> * 当本次宏任务执行完，检查微任务队列，发现一个Promise.then, 执行</span></span><br><span class="line"><span class="comment"> * 接下来进入到下一个宏任务——setTimeout, 执行</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:;" class="page-reward-btn tooltip-top">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>感谢您打赏帅气的农民<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/social/alipay.JPG">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/social/wechatpay.JPG">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -237,7 +311,7 @@
 		</ul>
 	</div>
 
-          
+    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -250,263 +324,120 @@
 	</div>
 
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+  <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+  <p>扫一扫，分享到微信</p>
+  <div class="wx-qrcode">
+    <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/10/javascript-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/" alt="微信分享二维码">
+  </div>
+</div>
+
+<div class="mask js-mask"></div>
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-    
 
 
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/09/javascript-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2020-06-09T14:56:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-09</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/09/javascript-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/">javascript 基础（二）</a>
-    </h1>
   
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-    
-
-
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/07/javascript-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2020-06-07T14:19:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-07</time>
-</a>
-        </div>
-    	 
+    <a href="/2020/06/09/javascript-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">javascript 基础（二）</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/07/javascript-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/">javascript 基础（一）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
+</nav>
 
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-    
-
-
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/06/javascript-%E6%B7%B1%E5%BA%A6%E5%85%8B%E9%9A%86%E4%B8%8E%E9%98%B2%E6%8A%96%E8%8A%82%E6%B5%81/" class="archive-article-date">
-  	<time datetime="2020-06-06T12:06:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/06/javascript-%E6%B7%B1%E5%BA%A6%E5%85%8B%E9%9A%86%E4%B8%8E%E9%98%B2%E6%8A%96%E8%8A%82%E6%B5%81/">javascript 深度克隆与防抖节流</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-    
-
-
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/06/%E6%89%8B%E5%86%99-call%E7%AD%89/" class="archive-article-date">
-  	<time datetime="2020-06-06T12:05:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/06/%E6%89%8B%E5%86%99-call%E7%AD%89/">手写 call等</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-    
-
-
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/06/%E6%89%8B%E5%86%99-async-await/" class="archive-article-date">
-  	<time datetime="2020-06-06T12:02:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/06/%E6%89%8B%E5%86%99-async-await/">手写 async await</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-    
-    
-  </div>
-</section>
+        
+        
+    </div>
+</aside>
 
 
 
+
+
+
+
+
+
+
+
+
+<div id="gitment-ctn"></div>
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  var gitment = new Gitment({
+    id: "http://yoursite.com/2020/06/10/javascript-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/",
+    //id: 'Wed Jun 10 2020 19:38:02 GMT+0800',
+    owner: 'li-car-fei',
+    repo: 'li-car-fei.github.io',
+    oauth: {
+      client_id: 'c455113c0bdc87f92fd0',
+      client_secret: 'a88bd5b381138f689b6157e17e03aad11d4cd4e1',
+    },
+  })
+  gitment.render('gitment-ctn')
+</script>
 
 
           </div>
@@ -535,9 +466,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 			isArchive: false,
-				isTag: true,
+				isTag: false,
 					isCategory: false,
 						open_in_new: true,
 							toc_hide_index: true,
