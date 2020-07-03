@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Category: 前端 | 藤原拓鞋</title>
+  <title>移动端适配相关 | 藤原拓鞋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="藤原拓鞋">
-<meta property="og:url" content="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/page/2/index.html">
+  <meta name="description" content="web 前端移动端适配rem，dpr，适配方案">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端适配相关">
+<meta property="og:url" content="http://yoursite.com/2020/07/03/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8D%E7%9B%B8%E5%85%B3/index.html">
 <meta property="og:site_name" content="藤原拓鞋">
+<meta property="og:description" content="web 前端移动端适配rem，dpr，适配方案">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-07-03T13:13:54.000Z">
+<meta property="article:modified_time" content="2020-07-03T15:13:33.887Z">
 <meta property="article:author" content="藤原拓鞋">
 <meta name="twitter:card" content="summary">
   
@@ -196,48 +200,149 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-
-
-
-
-
-
-<section class="archives-wrap">
-  <div class="archive-year-wrap">
-    <a href="/archives/2020" class="archive-year">2020</a>
-  </div>
-  <div class="archives">
+            <article id="post-移动端适配相关" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/27/Vuex%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/" class="archive-article-date">
-  	<time datetime="2020-04-27T09:03:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-27</time>
-</a>
-        </div>
-    	 
+      <header class=" article-header">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/27/Vuex%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/">Vuex源码解析</a>
+  
+    <h1 class="article-title" itemprop="name">
+      移动端适配相关
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
+  <!--显示阅读次数-->
+  
+  <br />
+  <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+    <span class="icon-sort"></span>
+    <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+      阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+    </span>
+  </a>
+  
+  
+  <a href="/2020/07/03/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8D%E7%9B%B8%E5%85%B3/" class="archive-article-date">
+  	<time datetime="2020-07-03T13:13:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-03</time>
+</a>
+  
+  <!-- 这里开始添加以下内容 -->
+  
+  <div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <span class="post-meta-item-text"> 字数统计: </span>
+            <span class="post-count">1.5k字</span>
+        </span>
+    </span>
 
-          
+    <span class="post-time">
+        |
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <span class="post-meta-item-text"> 阅读时长: </span>
+            <span class="post-count">5分</span>
+        </span>
+    </span>
+</div>
+  
+  <!-- 到这里结束 -->
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+
+    
+    <p>web 前端移动端适配<br>rem，dpr，适配方案</p>
+<a id="more"></a>
+
+<h1 id="专有名词与视口"><a href="#专有名词与视口" class="headerlink" title="专有名词与视口"></a>专有名词与视口</h1><ul>
+<li>分辨率：物理像素 * 物理像素</li>
+<li>设备独立像素：不同于物理像素，是虚拟化的，比如说 css 像素 10px</li>
+<li>设备像素比：dpr，设备像素（物理像素）/ css 像素，可以通过 JS 获取：<code>window.devicePixelRatio</code></li>
+</ul>
+<h2 id="布局视口"><a href="#布局视口" class="headerlink" title="布局视口"></a>布局视口</h2><p>在 PC 浏览器中，布局视口和浏览器可视窗口宽度是一致的，同时和浏览器本身的宽度一致<br>但在<strong>移动端</strong>，<strong>布局视口的宽度是要远远大于浏览器的宽度</strong>的，这两个视口是相互独立存在的。这是由于，浏览器厂商为了让用户在小屏幕下网页也能够显示地很好，所以把布局视口宽度设置地很大，最常见的宽度是 980px，可以通过<code>document.documentElement.clientWidth</code>得到</p>
+<h2 id="理想视口"><a href="#理想视口" class="headerlink" title="理想视口"></a>理想视口</h2><p>由于布局视口明显不友好，且忽略了手机的尺寸问题<br>所以苹果引入了理想视口的概念，它是对设备来说最理想的布局视口尺寸，理想视口中的网页用户最理想的宽度，用户进入页面的时候不需要缩放</p>
+<p>所以很明显，所谓的理想宽度就是浏览器（屏幕）的宽度了</p>
+<p>所以就有了下面的代码：<br><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;</code></p>
+<p><code>width=device-width</code> 这句代码可以把布局视口设置成为浏览器（屏幕）的宽度</p>
+<p><code>initial-scale=1</code> 的意思是初始缩放的比例是 1，使用它的时候，同时也会将布局视口的尺寸设置为缩放后的尺寸。而缩放的尺寸就是基于屏幕的宽度来的，也就起到了和<code>width=device-width</code>同样的效果</p>
+<h1 id="dpr-具体表现-模糊的由来"><a href="#dpr-具体表现-模糊的由来" class="headerlink" title="dpr 具体表现-模糊的由来"></a>dpr 具体表现-模糊的由来</h1><p>有时我们发现，在不同的设备中展示同一张图片清晰度会不一样，这就要涉及到一个属性：<strong>dpr-设备像素比</strong></p>
+<p>在任何屏幕中，css 像素所呈现的大小是一致的，但一个 css 像素对应（覆盖）的物理像素个数是不一样的</p>
+<p>而一个 css 像素对应其 rgb 颜色，而若 dpr&gt;1，则几个相邻的物理像素只对应一个 css 像素，rgb 值只能取近似值，则导致了模糊</p>
+<p>解决方案：<br>很明显，由于 css 元素不够分导致了模糊，那么使用跟 dpr 同个倍数大小的图片便能解决问题<br>比如对于 dpr=2 的设备，一个 200x300 的 img 标签，原图就要提供 400x600 的大小</p>
+<h1 id="rem-布局和字体的处理"><a href="#rem-布局和字体的处理" class="headerlink" title="rem 布局和字体的处理"></a>rem 布局和字体的处理</h1><p>在手淘的适配方案 flexible.js 中可见，在宽高中使用的是 rem，这是为了保证在不同宽度尺寸的设备中能够保证布局的等比例缩放</p>
+<p>而由于 rem 单位在不同的宽度下换算出来不一样但都适配了比例，而我们希望在移动端中字体的相对大小要大一点，看得清楚一点，则更好的做法是使用 px 和媒体查询来进行字体的适配</p>
+<p>对 font-size 进行放大的处理，如下 sass 代码代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@mixin font-dpr($font-size)&#123;</span><br><span class="line">    font-size:$font-size;</span><br><span class="line">    [data-dpr&#x3D;&quot;2&quot;]&amp;&#123;</span><br><span class="line">        font-size:$font-size*2;</span><br><span class="line">    &#125;</span><br><span class="line">    [data-dpr&#x3D;&quot;3&quot;]&amp;&#123;</span><br><span class="line">        font-size:$font-size*3;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>由于不同屏幕 dpr 不同，我们又想显示的代码一样大，于是就给字体再增大 dpr 的倍数，这样当缩小 dpr 倍的时候，字体也就和设计稿所示的大小一样大了</p>
+<h1 id="响应式与自适应"><a href="#响应式与自适应" class="headerlink" title="响应式与自适应"></a>响应式与自适应</h1><ul>
+<li>响应式：针对不同分辨率设备而进行的适配设计，以利用@media 规则为主要手段</li>
+<li>自适应：以比例布局为主，适配不同的浏览器窗口大小</li>
+</ul>
+<h1 id="移动端适配三种方案"><a href="#移动端适配三种方案" class="headerlink" title="移动端适配三种方案"></a>移动端适配三种方案</h1><h2 id="百分比适配"><a href="#百分比适配" class="headerlink" title="百分比适配"></a>百分比适配</h2><p>根据父容器的宽高来进行布局，在父容器宽高已知的条件下有效果</p>
+<h2 id="viewport-视口适配"><a href="#viewport-视口适配" class="headerlink" title="viewport 视口适配"></a>viewport 视口适配</h2><p>viewport 视口适配方案核心在于：给定一个目标的屏幕宽度，然后根据当前设备实际的屏幕宽度进行缩放比例的设置<br>如下：</p>
+<ul>
+<li>按照一个固定的屏幕宽度来进行适配</li>
+<li>比如，我设定的设备宽度就是 320</li>
+<li>那么一个 1/4 屏幕的宽度就是 80px（我像素就写死 80px）</li>
+<li>如果实际运行的屏幕正好是 320，那刚好就是 1/4</li>
+<li>如果在一个屏幕宽度为 640 的设备上，写死 80px 就只能占 1/8，解决方法就是，把 640 的设备的初始比例设置为 2 倍，即放大两倍</li>
+</ul>
+<p>根据上述运算规则，有：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> screenW = <span class="built_in">window</span>.screen.width; <span class="comment">// 获取当前设备屏幕宽度</span></span><br><span class="line">  <span class="keyword">let</span> targetWidth = <span class="number">320</span>; <span class="comment">// 目标宽度</span></span><br><span class="line">  <span class="keyword">let</span> scale = screenW / targetWidth; <span class="comment">//  当前设备屏幕宽度 / 目标宽度  = 缩放比例</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 根据计算结果初始化当前设备的缩放比例</span></span><br><span class="line">  <span class="keyword">let</span> meta = <span class="built_in">document</span>.createElement(<span class="string">"meta"</span>);</span><br><span class="line">  meta.name = <span class="string">"viewport"</span>; <span class="comment">// 视口设置meta</span></span><br><span class="line">  meta.content = <span class="string">`user-scalable=no,initial-scale=<span class="subst">$&#123;scale&#125;</span>,maximum-scale=<span class="subst">$&#123;scale&#125;</span>,minimum-scale=<span class="subst">$&#123;scale&#125;</span>`</span>;</span><br><span class="line">  <span class="built_in">document</span>.head.appendChild(meta);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+
+<p>有了上述代码，在对应设备中会进行比例缩放，则可以再 css 种根据目标宽度写死像素了</p>
+<h2 id="rem-适配"><a href="#rem-适配" class="headerlink" title="rem 适配"></a>rem 适配</h2><p>rem 是相对于根元素的字体大小，即设置到 html 上 font-size 的大小<br>而 font-size 指的是一个字的宽度，而宽度就是屏幕的尺寸单位，根据 font-size 便可以将屏幕宽度分割，1rem 则代表一份</p>
+<p>所以，对于 rem 的设置先获取当前设备的宽度，并动态计算：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 根据不同设备，将屏幕按比例分割成10份</span></span><br><span class="line">  <span class="keyword">let</span> screenW = <span class="built_in">document</span>.documentElement.clientWidth || <span class="built_in">window</span>.screen.width;</span><br><span class="line">  <span class="keyword">let</span> oneRem = screenW / <span class="number">10</span>;</span><br><span class="line">  <span class="built_in">document</span>.documentElement.style.fontSize = <span class="string">`<span class="subst">$&#123;oneRem&#125;</span>px`</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>接下来的布局则根据屏幕宽度的刻度-1rem 来进行</p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>以上，谢谢阅览</p>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:;" class="page-reward-btn tooltip-top">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>感谢您打赏帅气的农民<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/social/alipay.JPG">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/social/wechatpay.JPG">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -250,354 +355,129 @@
 	</div>
 
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+  <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+  <p>扫一扫，分享到微信</p>
+  <div class="wx-qrcode">
+    <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/03/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8D%E7%9B%B8%E5%85%B3/" alt="微信分享二维码">
+  </div>
+</div>
+
+<div class="mask js-mask"></div>
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-    
 
 
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/28/Vue-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E8%A7%A3%E6%9E%90/" class="archive-article-date">
-  	<time datetime="2020-03-28T09:13:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-28</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/28/Vue-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E8%A7%A3%E6%9E%90/">Vue 生命周期解析</a>
-    </h1>
+    <a href="/2020/07/03/%E8%B7%A8%E5%9F%9F%E6%96%B9%E6%B3%95%E4%B8%8E%E9%98%B2%E8%8C%83/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          跨域方法与防范
+        
+      </div>
+    </a>
   
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-    
-
-
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/12/Vue-router-%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/" class="archive-article-date">
-  	<time datetime="2020-03-12T08:57:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-12</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/12/Vue-router-%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/">Vue-router 源码解析</a>
-    </h1>
+    <a href="/2020/06/17/%E7%AE%97%E6%B3%95%E5%BD%92%E7%BA%B3%E5%9B%9B/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">算法归纳四</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-    
-
-
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/18/Vue-MVVM-%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2020-02-18T08:07:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/18/Vue-MVVM-%E6%A8%A1%E5%BC%8F/">Vue MVVM 模式</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-    
-
-
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/01/Vue-%E7%AE%80%E6%98%93%E5%95%86%E5%9F%8E%E5%BC%80%E5%8F%91/" class="archive-article-date">
-  	<time datetime="2020-02-01T09:25:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/01/Vue-%E7%AE%80%E6%98%93%E5%95%86%E5%9F%8E%E5%BC%80%E5%8F%91/">Vue 简易商城开发</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-    
-
-
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/31/Vue-%E5%B8%B8%E7%94%A8%E5%BC%80%E5%8F%91%E6%8A%80%E5%B7%A7%E4%BC%98%E5%8C%96/" class="archive-article-date">
-  	<time datetime="2020-01-31T03:11:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/31/Vue-%E5%B8%B8%E7%94%A8%E5%BC%80%E5%8F%91%E6%8A%80%E5%B7%A7%E4%BC%98%E5%8C%96/">Vue 常用开发技巧优化</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-    
-
-
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/17/Vue-Todolist-%E5%BC%80%E5%8F%91/" class="archive-article-date">
-  	<time datetime="2020-01-17T13:43:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/17/Vue-Todolist-%E5%BC%80%E5%8F%91/">Vue Todolist 开发</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-    
-
-
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/04/%E7%AE%80%E5%8D%95%E5%BC%B9%E5%B9%95%E5%AE%9E%E7%8E%B0/" class="archive-article-date">
-  	<time datetime="2020-01-04T11:52:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/04/%E7%AE%80%E5%8D%95%E5%BC%B9%E5%B9%95%E5%AE%9E%E7%8E%B0/">简单弹幕实现</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-    
-    
-  </div>
-</section>
-
-
-
-<nav id="page-nav">
-  <a class="extend prev" rel="prev" href="/categories/%E5%89%8D%E7%AB%AF/"> Prev</a><a class="page-number" href="/categories/%E5%89%8D%E7%AB%AF/">1</a><span class="page-number current">2</span>
 </nav>
 
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="gitment-ctn"></div>
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  var gitment = new Gitment({
+    id: "http://yoursite.com/2020/07/03/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8D%E7%9B%B8%E5%85%B3/",
+    //id: 'Fri Jul 03 2020 21:13:54 GMT+0800',
+    owner: 'li-car-fei',
+    repo: 'li-car-fei.github.io',
+    oauth: {
+      client_id: 'c455113c0bdc87f92fd0',
+      client_secret: 'a88bd5b381138f689b6157e17e03aad11d4cd4e1',
+    },
+  })
+  gitment.render('gitment-ctn')
+</script>
 
 
           </div>
@@ -626,10 +506,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 			isArchive: false,
 				isTag: false,
-					isCategory: true,
+					isCategory: false,
 						open_in_new: true,
 							toc_hide_index: true,
 								root: "/",
