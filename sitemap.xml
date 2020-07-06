@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/07/06/JQuery%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/</loc>
+    
+    <lastmod>2020-07-06T03:41:05.619Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/07/03/%E8%B7%A8%E5%9F%9F%E6%96%B9%E6%B3%95%E4%B8%8E%E9%98%B2%E8%8C%83/</loc>
     
     <lastmod>2020-07-03T16:58:50.316Z</lastmod>
@@ -215,13 +222,6 @@
     <loc>http://yoursite.com/2020/04/29/%E7%AE%97%E6%B3%95%E5%BD%92%E7%BA%B3%E4%B8%80/</loc>
     
     <lastmod>2020-05-29T09:20:09.453Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/05/28/%E6%97%A5%E8%AE%B0-2020%E5%B9%B4-5%E6%9C%8828%E6%97%A5/</loc>
-    
-    <lastmod>2020-05-29T08:47:22.900Z</lastmod>
     
   </url>
   

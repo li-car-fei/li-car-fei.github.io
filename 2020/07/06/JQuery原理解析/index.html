@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Category: 日记 | 藤原拓鞋</title>
+  <title>JQuery原理解析 | 藤原拓鞋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="藤原拓鞋">
-<meta property="og:url" content="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/index.html">
+  <meta name="description" content="jQuery 无 new 创建实例 extend 方法 $() 选择器的封装Callback API Deferred API jQuery 事件绑定原理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JQuery原理解析">
+<meta property="og:url" content="http://yoursite.com/2020/07/06/JQuery%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/index.html">
 <meta property="og:site_name" content="藤原拓鞋">
+<meta property="og:description" content="jQuery 无 new 创建实例 extend 方法 $() 选择器的封装Callback API Deferred API jQuery 事件绑定原理">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-07-06T03:10:11.000Z">
+<meta property="article:modified_time" content="2020-07-06T03:41:05.619Z">
 <meta property="article:author" content="藤原拓鞋">
+<meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="藤原拓鞋" type="application/atom+xml">
@@ -196,72 +201,329 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-
-
-
-
-
-
-<section class="archives-wrap">
-  <div class="archive-year-wrap">
-    <a href="/archives/2020" class="archive-year">2020</a>
-  </div>
-  <div class="archives">
+            <article id="post-JQuery原理解析" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/28/%E6%97%A5%E8%AE%B0-2020%E5%B9%B4-5%E6%9C%8828%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2020-05-28T15:22:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-28</time>
-</a>
-        </div>
-    	 
+      <header class=" article-header">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/28/%E6%97%A5%E8%AE%B0-2020%E5%B9%B4-5%E6%9C%8828%E6%97%A5/">日记 2020年 5月28日</a>
+  
+    <h1 class="article-title" itemprop="name">
+      JQuery原理解析
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+  <!--显示阅读次数-->
+  
+  <br />
+  <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+    <span class="icon-sort"></span>
+    <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+      阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+    </span>
+  </a>
+  
+  
+  <a href="/2020/07/06/JQuery%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/" class="archive-article-date">
+  	<time datetime="2020-07-06T03:10:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-06</time>
+</a>
+  
+  <!-- 这里开始添加以下内容 -->
+  
+  <div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <span class="post-meta-item-text"> 字数统计: </span>
+            <span class="post-count">4.3k字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        |
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <span class="post-meta-item-text"> 阅读时长: </span>
+            <span class="post-count">18分</span>
+        </span>
+    </span>
+</div>
+  
+  <!-- 到这里结束 -->
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+
+    
+    <p>jQuery 无 new 创建实例 extend 方法 $() 选择器的封装<br>Callback API Deferred API jQuery 事件绑定原理</p>
+<a id="more"></a>
+
+<h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><p>本文仅对 jQuery 基本的 API 及其原理进行分析，源代码一万多行并没有完整分析，仅作参考</p>
+<h1 id="jQuery-无-new-创建实例"><a href="#jQuery-无-new-创建实例" class="headerlink" title="jQuery 无 new 创建实例"></a>jQuery 无 new 创建实例</h1><p>jQuery 共享原型的设计思想，将 jQuery 原型对象共享，然后通过扩展实例方法属性以及添加静态属性以及静态方法实现 jQuery 的灵活扩展</p>
+<p>实现方法：创建一个 jQuery 对象, 返回 jQuery 原型对象的 init 方法, 然后共享原型, 将 jQuery 挂载到 windows 上起别名$,<br>实现通过$来访问 jQuery 的构造函数.同理通过$.fn 来替代 jQuery.prototype</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 立即调用</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">root</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> jQuery = <span class="function"><span class="keyword">function</span> (<span class="params">selector, context</span>) </span>&#123;</span><br><span class="line">        <span class="comment">// jQuery对象实际上只是init构造函数</span></span><br><span class="line">        <span class="comment">// 如果调用了jQuery，则需要init</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> jQuery.prototype.init(selector, context);</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    jQuery.fn = jQuery.prototype = &#123;</span><br><span class="line">        init:<span class="function"><span class="keyword">function</span>(<span class="params">selector, context</span>)</span>&#123;&#125;;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 共享原型对象</span></span><br><span class="line">    jQuery.fn.init.prototype = jQuery.fn;</span><br><span class="line">    root.$ = root.jQuery = jQuery;</span><br><span class="line">&#125;)(<span class="keyword">this</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="extend-方法"><a href="#extend-方法" class="headerlink" title="extend 方法"></a>extend 方法</h1><p>使用示例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 任意对象扩展</span></span><br><span class="line"><span class="keyword">var</span> obj = $.extend(&#123;&#125;, &#123; <span class="attr">name</span>: <span class="string">"james"</span> &#125;);</span><br><span class="line"><span class="comment">// jQuery本身扩展</span></span><br><span class="line">$.extend(&#123;</span><br><span class="line">  work: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>使用 jQuery 时，用 extend 方法进行扩展</p>
+<ol>
+<li>先判断深浅复制的情况以及复制的是什么类型的变量，</li>
+<li>然后要复制到 target 上，target 有可能是 jQuery 本身或者用户外部定义的变量，如果只传入一个值，则是扩展 jQuery 本身，<code>target=this=$=jQuery</code></li>
+<li>否则则是扩展用户定义的变量，<code>target=arguments[0]</code>，即传入的第一个变量</li>
+<li>最后，再进行拷贝，把扩展拷贝到 target 上并返回</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 扩展的方法</span></span><br><span class="line">jQuery.extend = jQuery.fn.extend = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 声明变量</span></span><br><span class="line">  <span class="keyword">var</span> options,</span><br><span class="line">    name,</span><br><span class="line">    copy,</span><br><span class="line">    src,</span><br><span class="line">    copyIsArray,</span><br><span class="line">    clone,</span><br><span class="line">    target = <span class="built_in">arguments</span>[<span class="number">0</span>] || &#123;&#125;,</span><br><span class="line">    length = <span class="built_in">arguments</span>.length,</span><br><span class="line">    <span class="comment">// 从第1个参数开始解析,因为第0个是我们targer,用来接收解析过的数据的</span></span><br><span class="line">    i = <span class="number">1</span>,</span><br><span class="line">    <span class="comment">// 是否是深拷贝,外界传过来的第一个参数</span></span><br><span class="line">    deep = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 处理深层复制情况</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> target === <span class="string">"boolean"</span>) &#123;</span><br><span class="line">    <span class="comment">// extender(deep,&#123;&#125;,obj1,obj2)</span></span><br><span class="line">    deep = target;</span><br><span class="line">    target = <span class="built_in">arguments</span>[i] || &#123;&#125;;</span><br><span class="line">    i++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 判断 targer不是对象也不是方法</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> target !== <span class="string">"object"</span> &amp;&amp; !isFunction(target)) &#123;</span><br><span class="line">    target = &#123;&#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 如果只传递一个参数，则扩展jQuery本身</span></span><br><span class="line">  <span class="keyword">if</span> (length === i) &#123;</span><br><span class="line">    target = <span class="keyword">this</span>;</span><br><span class="line">    <span class="comment">// 此时把i变为0</span></span><br><span class="line">    i--;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (; i &lt; length; i++) &#123;</span><br><span class="line">    <span class="comment">// 仅处理非null /未定义的值</span></span><br><span class="line">    <span class="keyword">if</span> ((options = <span class="built_in">arguments</span>[i]) != <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="comment">// 仅处理非null /未定义的值</span></span><br><span class="line">      <span class="keyword">for</span> (name <span class="keyword">in</span> options) &#123;</span><br><span class="line">        copy = options[name];</span><br><span class="line">        src = target[name];</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 防止Object.prototype污染</span></span><br><span class="line">        <span class="comment">// 防止死循环循环</span></span><br><span class="line">        <span class="keyword">if</span> (name === <span class="string">"__proto__"</span> || target == copy) &#123;</span><br><span class="line">          <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//如果我们要合并普通对象或数组，请递归</span></span><br><span class="line">        <span class="comment">// 此时的copy必须是数组或者是对象</span></span><br><span class="line">        <span class="keyword">if</span> (</span><br><span class="line">          deep &amp;&amp;</span><br><span class="line">          (jQuery.isPlainObject(copy) || (copyIsArray = jQuery.isArray(copy)))</span><br><span class="line">        ) &#123;</span><br><span class="line">          <span class="comment">// 确保源值的正确类型  源值只能是数组或者对象</span></span><br><span class="line">          <span class="keyword">if</span> (copyIsArray) &#123;</span><br><span class="line">            copyIsArray = <span class="literal">false</span>;</span><br><span class="line">            clone = src &amp;&amp; jQuery.isArray(src) ? src : [];</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            clone = src &amp;&amp; jQuery.isPlainObject(src) ? src : &#123;&#125;;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="comment">//永远不要移动原始对象，克隆它们</span></span><br><span class="line">          target[name] = jQuery.extend(deep, clone, copy);</span><br><span class="line"></span><br><span class="line">          <span class="comment">//不要引入未定义的值</span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (copy !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">          <span class="comment">// 浅拷贝</span></span><br><span class="line">          target[name] = copy;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//返回修改后的对象</span></span><br><span class="line">  <span class="keyword">return</span> target;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// jQuery本身扩展属性和方法，这里并不是用户调用扩展，而是源码里面调用，扩展一些源码里用的的方法</span></span><br><span class="line"><span class="comment">// 以下方法都在后面的分析中有用到，而Deferred等API也在此扩展，后面进行单独分析</span></span><br><span class="line">jQuery.extend(&#123;</span><br><span class="line">  <span class="comment">// 随机数</span></span><br><span class="line">  expando: <span class="string">"jQuery"</span> + (version + <span class="built_in">Math</span>.random()).replace(<span class="regexp">/\D/g</span>, <span class="string">""</span>),</span><br><span class="line">  guid: <span class="number">1</span>, <span class="comment">//计数器</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 判断elem元素在不在arr数组中</span></span><br><span class="line">  inArray: <span class="function"><span class="keyword">function</span> (<span class="params">elem, arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> arr == <span class="literal">null</span> ? <span class="number">-1</span> : [].indexOf.call(arr, elem);</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 类型检测，判断是不是对象</span></span><br><span class="line">  isPlainObject: <span class="function"><span class="keyword">function</span> (<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// "[object Object]" 第二个O一定是大写,坑了我好几个小时.......</span></span><br><span class="line">    <span class="keyword">return</span> toString.call(obj) === <span class="string">"[object Object]"</span>;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 类型检测，判断是不是数组</span></span><br><span class="line">  isArray: <span class="function"><span class="keyword">function</span> (<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> toString.call(obj) === <span class="string">"[object Array]"</span>;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h1 id="选择器的封装"><a href="#选择器的封装" class="headerlink" title="$() 选择器的封装"></a>$() 选择器的封装</h1><p>根据 jQuery 共享原型的设计，$()实际上调用的是 jQuery.prototype.init()</p>
+<p>示例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 传入字符串</span></span><br><span class="line"><span class="built_in">console</span>.log($(<span class="string">"a"</span>)); <span class="comment">//创建DOM节点包装成jQuery对象</span></span><br><span class="line"><span class="comment">// 传入HTML</span></span><br><span class="line"><span class="built_in">console</span>.log($(<span class="string">"&lt;div&gt;"</span>)); <span class="comment">// //创建DOM节点包装成jQuery对象</span></span><br><span class="line"><span class="comment">// 传入对象</span></span><br><span class="line"><span class="built_in">console</span>.log($(<span class="built_in">document</span>));</span><br><span class="line"><span class="comment">// 传入选择器</span></span><br><span class="line"><span class="built_in">console</span>.log($(<span class="string">".box"</span>));</span><br><span class="line"><span class="comment">// 传入对象</span></span><br><span class="line"><span class="built_in">console</span>.log($(<span class="keyword">this</span>)); <span class="comment">// 把传入的对象包装成jQuery对象</span></span><br><span class="line"><span class="comment">// 传入方法</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">11111</span>); <span class="comment">//这个是在页面加载完成后加载执行的,等效于在DOM文档加载完成后执行了$(document).read()方法</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>分析：<br>根据$()传过来的 selector 不同的数据类型,分析不同数据类型的行为,有以下几种情况:</p>
+<ol>
+<li>如果传过来的数据是字符串:那么要分析字符串是否是 HTML 标签,如果是 HTML 那么就通过正则提取关键字并创建一个 HTM 标签输出</li>
+<li>如果传过来的数据是不是 html 元素,那么要通过 querySelectorAll 来查询过滤,如果可以查询到是 DOM 中的选择器,那么就遍历输出他的值</li>
+<li>如果传过来的元素是 DOM 节点,直接返回</li>
+<li>如果传过来的数据是一个对象方法,那么要通过$(document).read()方法,监听拦截 DOMContentLoaded 方法,改变对象方法的指针然后依次加入到数组中,输出</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">         * [selector] 传入的参数</span></span><br><span class="line"><span class="comment">         * [context] DOM 查询的限定范围</span></span><br><span class="line"><span class="comment">         * **/</span></span><br><span class="line">        <span class="comment">// 选择器函数</span></span><br><span class="line">        init: <span class="function"><span class="keyword">function</span> (<span class="params">selector, context</span>) </span>&#123;</span><br><span class="line">            context = context || <span class="built_in">document</span>;</span><br><span class="line">            <span class="keyword">var</span> match, elem, index = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span> (!selector) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 传来的选择器数据selector是字符串</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">typeof</span> selector === <span class="string">"string"</span>) &#123;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (selector.charAt(<span class="number">0</span>) === <span class="string">"&lt;"</span> &amp;&amp; selector.charAt(selector.length - <span class="number">1</span>) === <span class="string">"&gt;"</span> &amp;&amp; selector.length &gt;= <span class="number">3</span>) &#123;</span><br><span class="line">                    <span class="comment">// 传过来的是html内容</span></span><br><span class="line">                    match = [selector];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// 匹配html或确保没有为#id指定上下文</span></span><br><span class="line">                <span class="keyword">if</span> (match) &#123;</span><br><span class="line">                    <span class="comment">// parseHTML(selector,context) 生成DOM元素      merge合并到jQuery数组</span></span><br><span class="line">                    jQuery.merge(<span class="keyword">this</span>, jQuery.parseHTML(selector, context));</span><br><span class="line"></span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="comment">// 传过来的是选择器查询DOM节点</span></span><br><span class="line">                    elem = <span class="built_in">document</span>.querySelectorAll(selector);</span><br><span class="line">                    <span class="comment">// 转化为真数组</span></span><br><span class="line">                    <span class="keyword">var</span> elems = <span class="built_in">Array</span>.prototype.slice.call(elem);</span><br><span class="line">                    <span class="keyword">this</span>.length = elem.length;</span><br><span class="line"></span><br><span class="line">                    <span class="keyword">for</span> (; index = elem.length; index++) &#123;</span><br><span class="line">                        <span class="keyword">this</span>[index] = elems[index];</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">this</span>.context = context;</span><br><span class="line">                    <span class="keyword">this</span>.selector = selector;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (selector.nodeType) &#123;</span><br><span class="line">                <span class="comment">// 传过来的选择器数据是DOM节点</span></span><br><span class="line">                <span class="keyword">this</span>.context = <span class="keyword">this</span>[<span class="number">0</span>] = selector;</span><br><span class="line">                <span class="keyword">this</span>.length = <span class="number">1</span>;</span><br><span class="line">                <span class="comment">// 直接返回此节点</span></span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line"></span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (isFunction(selector)) &#123;</span><br><span class="line">                <span class="comment">// 传过来的选择器数据是函数，则文档加载完时调用它</span></span><br><span class="line">                jQuery(<span class="built_in">document</span>).ready(selector);</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> jQuery.makeArray(selector, <span class="keyword">this</span>);</span><br><span class="line">        &#125;,</span><br><span class="line">        ready: <span class="function"><span class="keyword">function</span> (<span class="params">fn</span>) </span>&#123;</span><br><span class="line">            <span class="comment">// 检测dom是否加载完毕，加载完毕则调用jQuery.ready，会遍历调用readylist</span></span><br><span class="line">            <span class="built_in">document</span>.addEventListener(<span class="string">"DOMContentLoaded"</span>, jQuery.ready, <span class="literal">false</span>)</span><br><span class="line">            <span class="keyword">if</span> (jQuery.isReady) &#123;</span><br><span class="line">                <span class="comment">// 调用此个init()时文档已经加载完，直接调用函数fn</span></span><br><span class="line">                fn.call(<span class="built_in">document</span>)</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// 文档没有加载完，加入数组</span></span><br><span class="line">                jQuery.readylist.push(fn);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<p>而 init()中用到的 ready,merge，parseHTML，makeArray 方法则扩展在<code>jQuery.extend({})</code>中</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">jQuery.extend(&#123;</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   *  合并数组</span></span><br><span class="line"><span class="comment">   *  [first] jQuery的实例对象  this</span></span><br><span class="line"><span class="comment">   *  [second] DOM 节点</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  merge: <span class="function"><span class="keyword">function</span> (<span class="params">first, second</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> l = second.length, <span class="comment">// 1</span></span><br><span class="line">      i = first.length, <span class="comment">// 0</span></span><br><span class="line">      j = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> l === <span class="string">"number"</span>) &#123;</span><br><span class="line">      <span class="keyword">for</span> (; j &lt; l; j++) &#123;</span><br><span class="line">        <span class="comment">// 遍历DOM节点</span></span><br><span class="line">        first[i++] = second[j];</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">while</span> (second[j] !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">        first[i++] = second[j++];</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    first.length = i;</span><br><span class="line">    <span class="comment">// 返回jQuery的实例对象</span></span><br><span class="line">    <span class="keyword">return</span> first;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 解析HTML</span></span><br><span class="line"><span class="comment">   * [data] 传入的数据</span></span><br><span class="line"><span class="comment">   * [context] 返回的值</span></span><br><span class="line"><span class="comment">   * **/</span></span><br><span class="line">  parseHTML: <span class="function"><span class="keyword">function</span> (<span class="params">data, context</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!data || <span class="keyword">typeof</span> data !== <span class="string">"string"</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * exec() 是正则方法 返回为数组</span></span><br><span class="line"><span class="comment">     * [0] 为正则表达式相匹配的文本</span></span><br><span class="line"><span class="comment">     * [1] 表达式相匹配的文本</span></span><br><span class="line"><span class="comment">     * **/</span></span><br><span class="line">    <span class="comment">// 过滤掉符号,只提取标签 "&lt;a&gt;" ==&gt; "a"</span></span><br><span class="line">    <span class="keyword">var</span> parse = rejectExp.exec(data);</span><br><span class="line">    <span class="comment">// 返回一个创建DOM的元素</span></span><br><span class="line">    <span class="keyword">return</span> [context.createElement(parse[<span class="number">1</span>])];</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 将一个类数组对象转换为真正的数组对象</span></span><br><span class="line"><span class="comment">   * [arr] 传入的数组</span></span><br><span class="line"><span class="comment">   * [result] 返回的数组</span></span><br><span class="line"><span class="comment">   * **/</span></span><br><span class="line">  makeArray: <span class="function"><span class="keyword">function</span> (<span class="params">arr, result</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> ret = result || [];</span><br><span class="line">    <span class="keyword">if</span> (arr != <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (isArrayLike(<span class="built_in">Object</span>(arr))) &#123;</span><br><span class="line">        jQuery.merge(ret, <span class="keyword">typeof</span> arr === <span class="string">"string"</span> ? [arr] : arr);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        [].push.call(ret, arr);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  isReady: <span class="literal">false</span>,</span><br><span class="line">  readylist: [], <span class="comment">// init()事件函数列表，文档加载后调用</span></span><br><span class="line">  ready: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 事件函数</span></span><br><span class="line">    jQuery.isReady = <span class="literal">true</span>;</span><br><span class="line">    <span class="comment">// 遍历调用</span></span><br><span class="line">    jQuery.readylist.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">callback</span>) </span>&#123;</span><br><span class="line">      callback.call(<span class="built_in">document</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">// 清空</span></span><br><span class="line">    jQuery.readylist = <span class="literal">null</span>;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h1 id="Callback-API"><a href="#Callback-API" class="headerlink" title="Callback API"></a>Callback API</h1><p><code>$.callbacks</code>用于管理函数队列，通过 add 添加处理函数到队列中,通过 fire 去执行这些函数，<code>$.callbacks</code>是在 jQuery 内部使用的,如为.ajax,$.Deffed 等组件提供基础功能函数</p>
+<p>四种调用模式：</p>
+<ul>
+<li>once：函数队列只执行一次</li>
+<li>unique：往内部队列添加的函数保持唯一,不能重复添加</li>
+<li>stopOnFalse：内部队列里的函数是依次执行的,当某个函数的返回值是 false 时,停止继续执行剩下的函数</li>
+<li>memory：当参数队列 fire 一次过后,内部会记录当前 fire 的参数。当下次调用 add 的时候,会把记录的参数传递给新添加的函数并立即执行这个新添加的函数</li>
+</ul>
+<p>原理：</p>
+<ol>
+<li>首先是<code>add()</code>方法:将穿过来的 options 先把他们转为真数组,然后将数组遍历出来挑选出类型为”Function”的数据,将数据添加到一个空数组中,等待执行</li>
+<li><code>fire()</code>其实就是把添加到队列中的方法依次按规则输出执行,需要一个中间件 fireWith 提供上下文</li>
+<li>实现 stopOnFalse，<code>fire()</code>在遍历方法的时候，如果结果为 false，来判定 options 是否有 stopOnFalse 参数,如果有立马退出</li>
+<li>实现 once，定义一个参数来记录第一次执行<code>fire()</code>的方法,然后在调用执行<code>fire()</code>这个方法判断是否传入有 once 参数，如果有,那么就不会再去执行<code>fire()</code>方法</li>
+<li>实现 memory，<code>add()</code>阶段要记录传入的 options 是否有 memory 这个参数,其次在执行<code>fire()</code>的阶段记录它的 index 值</li>
+<li>实现 unique，<code>add()</code>阶段进行判定 unique 和方法列表中是否有当前 function，判断通过才 push 到列表中</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">         * [Callbacks] Callbacks回调方法</span></span><br><span class="line"><span class="comment">         * [options] 外界传进来的参数 可以是多个</span></span><br><span class="line"><span class="comment">         * **/</span></span><br><span class="line">        Callbacks: <span class="function"><span class="keyword">function</span> (<span class="params">options</span>) </span>&#123;</span><br><span class="line">            <span class="comment">// 检测options的类型</span></span><br><span class="line">            options = <span class="keyword">typeof</span> options === <span class="string">"string"</span> ? (optionsCache[options] || createOpeions(options)) : &#123;&#125;;</span><br><span class="line">            <span class="comment">// 定义一个数组用来存放add将来的方法</span></span><br><span class="line">            <span class="keyword">var</span> list = [],</span><br><span class="line">                length,</span><br><span class="line">                index,</span><br><span class="line">                startAdd,</span><br><span class="line">                memory,</span><br><span class="line">                start,</span><br><span class="line">                memorySarts;</span><br><span class="line">            <span class="keyword">var</span> fire = <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">                <span class="comment">// memory</span></span><br><span class="line">                memory = options.memory &amp;&amp; data;</span><br><span class="line">                <span class="comment">// 为了防止memory再次调用一次定义了starts</span></span><br><span class="line">                index = memorySarts || <span class="number">0</span>;</span><br><span class="line">                start = <span class="number">0</span>;</span><br><span class="line">                length = list.length;</span><br><span class="line">                startAdd = <span class="literal">true</span>;        <span class="comment">// 用来记录fire()方式是否执行 便于"once"方法操作</span></span><br><span class="line">                <span class="comment">// 遍历循环list</span></span><br><span class="line">                <span class="keyword">for</span> (; index &lt; length; index++) &#123;</span><br><span class="line">                    <span class="comment">// 通过遍历查找list[index]的值为false 且options有stopOnfalse这个参数时遍历终止返回</span></span><br><span class="line">                    <span class="keyword">if</span> (list[index].apply(data[<span class="number">0</span>], data[<span class="number">1</span>]) == <span class="literal">false</span> &amp;&amp; options.stopOnfalse) &#123;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">var</span> self = &#123;</span><br><span class="line">                <span class="comment">// 添加函数的方法</span></span><br><span class="line">                add: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                    <span class="comment">// Array.prototype.slice.call(arguments) 伪数组转真数组</span></span><br><span class="line">                    <span class="keyword">var</span> args = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>);</span><br><span class="line">                    start = list.length;</span><br><span class="line">                    <span class="comment">// 遍历args 找出里面的Function</span></span><br><span class="line">                    args.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">fn</span>) </span>&#123;</span><br><span class="line">                        <span class="comment">// 检索fn是是否是Function</span></span><br><span class="line">                        <span class="keyword">if</span> (toString.call(fn) === <span class="string">"[object Function]"</span>) &#123;</span><br><span class="line">                            <span class="comment">// unique 不存在 且fn在list中 那么可以把fn添加到队里中</span></span><br><span class="line">                            <span class="keyword">if</span> (!options.unique || !self.has(fn, list)) &#123;</span><br><span class="line">                                list.push(fn);</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;);</span><br><span class="line">                    <span class="comment">// memory</span></span><br><span class="line">                    <span class="keyword">if</span> (memory) &#123;</span><br><span class="line">                        memorySarts = start;</span><br><span class="line">                        fire(memory);</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="comment">// 方便链式编程</span></span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">                &#125;,</span><br><span class="line">                <span class="comment">// 定义一个上下文绑定函数</span></span><br><span class="line">                fileWith: <span class="function"><span class="keyword">function</span> (<span class="params">context, arguments</span>) </span>&#123;</span><br><span class="line">                    <span class="keyword">var</span> args = [context, <span class="built_in">arguments</span>];</span><br><span class="line">                    <span class="comment">// 非fire做限制调用</span></span><br><span class="line">                    <span class="keyword">if</span> (!options.once || !startAdd) &#123;        <span class="comment">// startAdd记录函数是否被执行过一次</span></span><br><span class="line">                        fire(args);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;,</span><br><span class="line">                fire: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                    self.fileWith(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">                &#125;,</span><br><span class="line">                has: <span class="function"><span class="keyword">function</span> (<span class="params">fn, array</span>) </span>&#123;</span><br><span class="line">                    <span class="keyword">return</span> arr = jQuery.inArray(fn, array) &gt; <span class="number">-1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> self;</span><br><span class="line">        &#125;,</span><br></pre></td></tr></table></figure>
+
+<h1 id="Deferred-API"><a href="#Deferred-API" class="headerlink" title="Deferred API"></a>Deferred API</h1><p>Deferred 是 jQuery 提出的回调函数解决方案,主要依赖 Callbacks 回调,主要解决的问题是:当一个异步依赖于另一个异步请求的结果时，或者某个操作需要等另外几个操作都结束后才开始等</p>
+<p>API:</p>
+<ul>
+<li><code>$.Deferred()</code> 生成一个 deferred 对象</li>
+<li><code>deferred.done()</code> 指定操作成功时的回调函数</li>
+<li><code>deferred.fail()</code> 指定操作失败时的回调函数</li>
+<li><code>.promise()</code>返回一个 Promise 对象来观察当某种类型的所有行动绑定到结合,排队与否还是已经完成</li>
+<li><code>deferred.resolve()</code> 手动改变 deferred 对象的运行状态为”已完成”，从而立即触发<code>done()</code>方法</li>
+<li><code>deferred.reject()</code> 这个方法与<code>deferred.resolve()</code>正好相反，调用后将 deferred 对象的运行状态变为”已失败”，从而立即触发<code>fail()</code>方法</li>
+<li><code>$.when()</code> 为多个操作指定回调函数</li>
+<li><code>deferred.then()</code>可以把<code>done()</code>和<code>fail()</code>合在一起写,参考 Promise</li>
+<li><code>deferred.progress()</code>当 Deferred 延迟对象生成时,调用已添加的处理程序</li>
+</ul>
+<p>实现原理</p>
+<ol>
+<li>首先定义了 tuples 的数据结构,用来组装存储异步延迟三种不同状态信息的描述</li>
+<li>然后定义一个 promise 用来封装 state,then,promise 对象</li>
+<li>定义一个延迟对象 deferred = {};</li>
+<li>遍历封装好的 tuples 数组队列，把 tuples 数组里第二个元素映射到对应的 Callbacks，将数组的第三个元素记录的最终状态信息给到 stateString,然后把数组第一个元素即延时对象的状态映射到 Callbacks 的 add 方法上,定义辅助方法</li>
+<li>最后调用 Callbacks 的 fireWith 方法实现队列的回调</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">         * Deferred  异步回调解决方案</span></span><br><span class="line"><span class="comment">         *</span></span><br><span class="line"><span class="comment">         * **/</span></span><br><span class="line">        Deferred: <span class="function"><span class="keyword">function</span> (<span class="params">func</span>) </span>&#123;</span><br><span class="line">            <span class="comment">/**</span></span><br><span class="line"><span class="comment">             *  tuples     定义一个数组来存储三种不同状态信息的描述</span></span><br><span class="line"><span class="comment">             *  第一个参数  延时对象的状态</span></span><br><span class="line"><span class="comment">             *  第二个参数  往队列里添加处理函数</span></span><br><span class="line"><span class="comment">             *  第三个参数  创建不同状态的队列</span></span><br><span class="line"><span class="comment">             *  第四个参数  记录最终状态信息</span></span><br><span class="line"><span class="comment">             * **/</span></span><br><span class="line">            <span class="keyword">var</span> tuples = [</span><br><span class="line">                [<span class="string">"resolve"</span>, <span class="string">"done"</span>, jQuery.Callbacks(<span class="string">"once memory"</span>), <span class="string">"resolved"</span>],</span><br><span class="line">                [<span class="string">"reject"</span>, <span class="string">"fail"</span>, jQuery.Callbacks(<span class="string">"once memory"</span>), <span class="string">"rejected"</span>],</span><br><span class="line">                [<span class="string">"notify"</span>, <span class="string">"progress"</span>, jQuery.Callbacks(<span class="string">"memory"</span>)]</span><br><span class="line">            ],</span><br><span class="line">                state = <span class="string">"pending"</span>,  <span class="comment">// 进行中的状态</span></span><br><span class="line">                promise = &#123;</span><br><span class="line">                    state: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                        <span class="keyword">return</span> state;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    then: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    promise: <span class="function"><span class="keyword">function</span> (<span class="params">obj</span>) </span>&#123;</span><br><span class="line">                        <span class="built_in">console</span>.log(promise);</span><br><span class="line">                        <span class="keyword">debugger</span></span><br><span class="line">                        <span class="keyword">return</span> obj != <span class="literal">null</span> ? jQuery.extend(obj, promise) : promise;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;,</span><br><span class="line">                <span class="comment">// 延迟对象   属性 方法</span></span><br><span class="line">                deferred = &#123;&#125;;</span><br><span class="line">            <span class="comment">// 遍历 tuples</span></span><br><span class="line">            tuples.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">tuple, i</span>) </span>&#123;</span><br><span class="line">                <span class="comment">// 创建Callbacks队列</span></span><br><span class="line">                <span class="keyword">var</span> list = tuple[<span class="number">2</span>],</span><br><span class="line">                <span class="comment">// 拿到当前最终信息的描述</span></span><br><span class="line">                <span class="keyword">var</span> stateString = tuple[<span class="number">3</span>];</span><br><span class="line">                <span class="comment">// promise[done | fail |progress]  将这三个状态都拿到Callbacks</span></span><br><span class="line">                promise[tuple[<span class="number">1</span>]] = list.add;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 如果有最终状态，成功或者失败</span></span><br><span class="line">                <span class="keyword">if</span> (stateString) &#123;              <span class="comment">// 第一个处理程序改变state状态</span></span><br><span class="line">                    list.add(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                        <span class="comment">// state = [resolved | rejected]</span></span><br><span class="line">                        state = stateString;        <span class="comment">// 改变状态</span></span><br><span class="line">                    &#125;);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// deferred [resolve | reject | notify ]  延时对象的状态拿到函数的引用</span></span><br><span class="line">                deferred[tuple[<span class="number">0</span>]] = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                    deferred[tuple[<span class="number">0</span>] + <span class="string">"With"</span>](<span class="keyword">this</span> === deferred ? promise : <span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">                &#125;;</span><br><span class="line">                <span class="comment">// list.fireWith 执行队列并且传参</span></span><br><span class="line">                <span class="comment">// 调用队列中的处理函数 并且给他们传参 绑定执行时的上下文对象</span></span><br><span class="line">                deferred[tuple[<span class="number">0</span>] + <span class="string">"With"</span>] = list.fireWith;</span><br><span class="line">            &#125;);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 调用promise.promise，使得deferred扩展添加promise中的方法</span></span><br><span class="line">            promise.promise(deferred);</span><br><span class="line">            <span class="comment">// 返回</span></span><br><span class="line">            <span class="keyword">return</span> deferred;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="comment">// 执行一个或多个对象的延迟函数的回调函数</span></span><br><span class="line">        when: <span class="function"><span class="keyword">function</span> (<span class="params">subordinate</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> subordinate.promise();</span><br><span class="line">        &#125;,</span><br></pre></td></tr></table></figure>
+
+<h1 id="jQuery-事件绑定原理"><a href="#jQuery-事件绑定原理" class="headerlink" title="jQuery 事件绑定原理"></a>jQuery 事件绑定原理</h1><p>示例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 多个事件绑定同一个函数：</span></span><br><span class="line">$(<span class="string">"#id"</span>).on(<span class="string">"mouseover mouseout"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"hello"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 多个事件绑定不同函数：</span></span><br><span class="line">$(<span class="string">"#id"</span>).on(&#123;</span><br><span class="line">  mouseover: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">"body"</span>).css(<span class="string">"background-color"</span>, <span class="string">"red"</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">  mourseout: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">"body"</span>).css(<span class="string">"background-color"</span>, <span class="string">"yellow"</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">  click: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">"body"</span>).css(<span class="string">"background-color"</span>, <span class="string">"black"</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 自定义事件：</span></span><br><span class="line">$(<span class="string">"#id"</span>).on(<span class="string">"myOwnEvent"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event, showName</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"hello"</span>);</span><br><span class="line">&#125;);</span><br><span class="line">$(<span class="string">"#id"</span>).trigger(<span class="string">"myOwnEvent"</span>, [<span class="string">"james"</span>]);</span><br></pre></td></tr></table></figure>
+
+<p>原理：</p>
+<ol>
+<li>jQuery 并没有将事件处理函数直接绑定到 DOM 元素上，而是通过 jQuery.event.add 存储在 cache 缓存对象上。</li>
+<li>最后通过在 DOM 元素上通过 addEventListener/attachEvent 绑定事件。</li>
+<li>当事件触发时，eventHandle 被执行，eventHandle 再去$.cache 中寻找曾经绑定的事件处理函数并执行</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *  获取随机缓存值</span></span><br><span class="line"><span class="comment"> * **/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Data</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.expando = jQuery.expando + <span class="built_in">Math</span>.random();</span><br><span class="line">  <span class="keyword">this</span>.cache = &#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line">Data.uid = <span class="number">1</span>;</span><br><span class="line">Data.prototype = &#123;</span><br><span class="line">  key: <span class="function"><span class="keyword">function</span> (<span class="params">elem</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> descript = &#123;&#125;,</span><br><span class="line">      unlock = elem[<span class="keyword">this</span>.expando];</span><br><span class="line">    <span class="keyword">if</span> (!unlock) &#123;</span><br><span class="line">      unlock = Data.uid++;</span><br><span class="line">      descript[<span class="keyword">this</span>.expando] = &#123;</span><br><span class="line">        value: unlock,</span><br><span class="line">      &#125;;</span><br><span class="line">      <span class="built_in">Object</span>.defineProperties(elem, descript);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 确保缓存对象记录信息</span></span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">this</span>.cache[unlock]) &#123;</span><br><span class="line">      <span class="keyword">this</span>.cache[unlock] = &#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> unlock;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="keyword">get</span>: function (elem, key) &#123;</span><br><span class="line">    <span class="keyword">var</span> cache = <span class="keyword">this</span>.cache[<span class="keyword">this</span>.key[elem]];</span><br><span class="line">    <span class="keyword">return</span> key === <span class="literal">undefined</span> ? cache : cache[key];</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> data_priv = <span class="keyword">new</span> Data();</span><br><span class="line"></span><br><span class="line"><span class="comment">// jQuery 事件模块</span></span><br><span class="line">jQuery.event = &#123;</span><br><span class="line">  <span class="comment">// 给选中元素注册事件处理函数</span></span><br><span class="line">  add: <span class="function"><span class="keyword">function</span> (<span class="params">elem, type, handler</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> eventHandle, events, handlers;</span><br><span class="line">    <span class="comment">// 事件缓存</span></span><br><span class="line">    <span class="keyword">var</span> elemData = data_priv.get(elem);</span><br><span class="line">    <span class="comment">//检测handler是否存在ID 如果没有那么就传给他一个ID</span></span><br><span class="line">    <span class="comment">//添加ID的目的是 用来寻找或者删除相应的事件</span></span><br><span class="line">    <span class="keyword">if</span> (!handler.guid) &#123;</span><br><span class="line">      handler.guid = jQuery.guid++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 给缓存增加事件处理语柄</span></span><br><span class="line">    <span class="comment">// 同一个元素,不同事件,不重复绑定</span></span><br><span class="line">    <span class="keyword">if</span> (!(events = elemData.events)) &#123;</span><br><span class="line">      events = elemData.event = &#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!(eventHandle = elemData.handler)) &#123;</span><br><span class="line">      <span class="comment">// event 对象代表事件的状态 通过apply传递</span></span><br><span class="line">      eventHandle = elemData.handler = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 修复事件并执行</span></span><br><span class="line">        <span class="keyword">return</span> jQuery.event.dispatch.apply(eventHandle.elem, <span class="built_in">arguments</span>);</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    eventHandle.elem = elem;</span><br><span class="line">    <span class="comment">// 通过events 存储同一个元素上的多个事件</span></span><br><span class="line">    <span class="keyword">if</span> (!(handlers = events[type])) &#123;</span><br><span class="line">      handlers = events[type] = [];</span><br><span class="line">      handlers.delegateCount = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    handlers.push(&#123;</span><br><span class="line">      type: type,</span><br><span class="line">      handler: handler,</span><br><span class="line">      guid: handler.guid,</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">// 增加事件</span></span><br><span class="line">    <span class="keyword">if</span> (elem.addEventListener) &#123;</span><br><span class="line">      elem.addEventListener(type, eventHandle, <span class="literal">false</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 修复事件对象event 从缓存体中的events对象取得对应的队列</span></span><br><span class="line">  dispatch: <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// IE兼容性处理: event,target or event.srcElement</span></span><br><span class="line">    <span class="comment">// event = jQuery.fix(event);</span></span><br><span class="line">    <span class="comment">// 提取当前元素在cache中的events属性值</span></span><br><span class="line">    <span class="keyword">var</span> handlers = data_priv.get(<span class="keyword">this</span>, <span class="string">"events"</span> || &#123;&#125;)[<span class="built_in">eval</span>.type] || [];</span><br><span class="line">    event.delegateTarget = <span class="keyword">this</span>;</span><br><span class="line">    <span class="comment">// 执行事件处理函数</span></span><br><span class="line">    jQuery.event.handlers.call(<span class="keyword">this</span>, event, handlers);</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 事件处理</span></span><br><span class="line">  handlers: <span class="function"><span class="keyword">function</span> (<span class="params">event, handlers</span>) </span>&#123;</span><br><span class="line">    handlers[<span class="number">0</span>].handler.call(<span class="keyword">this</span>, event);</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// event兼容性处理</span></span><br><span class="line">  fix: <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (event[jQuery.expando]) &#123;</span><br><span class="line">      <span class="keyword">return</span> event;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> i,</span><br><span class="line">      prop,</span><br><span class="line">      copy,</span><br><span class="line">      type = event.type,</span><br><span class="line">      originalEvent = <span class="built_in">eval</span>,</span><br><span class="line">      fixHook = <span class="keyword">this</span>.fixHook[type];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!fixHook) &#123;</span><br><span class="line">      <span class="keyword">this</span>.fixHook[type] = fixHook = rmouseEvent.test(type)</span><br><span class="line">        ? <span class="keyword">this</span>.mouseHook</span><br><span class="line">        : rkeyEvent.test(type)</span><br><span class="line">        ? <span class="keyword">this</span>.keyHooks</span><br><span class="line">        : &#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>以上分析，谢谢阅读</p>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:;" class="page-reward-btn tooltip-top">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>感谢您打赏帅气的农民<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/social/alipay.JPG">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/social/wechatpay.JPG">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/日记//" class="article-tag-list-link color3">日记</a>
+        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+  <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+  <p>扫一扫，分享到微信</p>
+  <div class="wx-qrcode">
+    <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/06/JQuery%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/" alt="微信分享二维码">
+  </div>
+</div>
+
+<div class="mask js-mask"></div>
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-    
-    
-  </div>
-</section>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/07/03/%E8%B7%A8%E5%9F%9F%E6%96%B9%E6%B3%95%E4%B8%8E%E9%98%B2%E8%8C%83/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">跨域方法与防范</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
 
 
 
+
+
+
+
+
+
+
+
+
+<div id="gitment-ctn"></div>
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  var gitment = new Gitment({
+    id: "http://yoursite.com/2020/07/06/JQuery%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/",
+    //id: 'Mon Jul 06 2020 11:10:11 GMT+0800',
+    owner: 'li-car-fei',
+    repo: 'li-car-fei.github.io',
+    oauth: {
+      client_id: 'c455113c0bdc87f92fd0',
+      client_secret: 'a88bd5b381138f689b6157e17e03aad11d4cd4e1',
+    },
+  })
+  gitment.render('gitment-ctn')
+</script>
 
 
           </div>
@@ -290,10 +552,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 			isArchive: false,
 				isTag: false,
-					isCategory: true,
+					isCategory: false,
 						open_in_new: true,
 							toc_hide_index: true,
 								root: "/",
@@ -391,10 +653,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
